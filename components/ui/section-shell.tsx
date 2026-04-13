@@ -39,7 +39,7 @@ export function SectionHeader({
   return (
     <div
       className={cn(
-        "mb-12 max-w-3xl space-y-4",
+        "mb-10 max-w-3xl space-y-2",
         align === "center" && "mx-auto text-center",
       )}
     >

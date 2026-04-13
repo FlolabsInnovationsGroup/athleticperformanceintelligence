@@ -22,7 +22,9 @@ type Common = {
 };
 
 type ButtonAsButton = Common &
-  React.ButtonHTMLAttributes<HTMLButtonElement> & { href?: undefined };
+  Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "className" | "children"> & {
+    href?: undefined;
+  };
 
 type ButtonAsLink = Common & {
   href: string;
@@ -33,7 +35,7 @@ export function Button(props: ButtonAsButton | ButtonAsLink) {
   const className = cn(base, variants[variant], props.className);
 
   if ("href" in props && props.href) {
-    const { href, children, ...rest } = props;
+    const { href, children, className: _c, variant: _v, ...rest } = props;
     return (
       <Link href={href} className={className} {...rest}>
         {children}
@@ -41,9 +43,16 @@ export function Button(props: ButtonAsButton | ButtonAsLink) {
     );
   }
 
-  const { children, ...rest } = props as ButtonAsButton;
+  const {
+    children,
+    className: _c,
+    variant: _v,
+    type = "button",
+    ...rest
+  } = props as ButtonAsButton;
+
   return (
-    <button type="button" className={className} {...rest}>
+    <button type={type} className={className} {...rest}>
       {children}
     </button>
   );

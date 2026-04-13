@@ -35,45 +35,54 @@ export function SiteHeader() {
           : "border-b border-transparent bg-transparent",
       )}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
-        <Link
-          href="#top"
-          className="group flex items-baseline gap-2 font-display text-lg font-semibold tracking-tight text-foreground"
-        >
-          <span>{brand.name}</span>
-          <span className="text-xs font-normal text-muted transition-colors group-hover:text-accent">
-            · {brand.brain}
-          </span>
-        </Link>
+      <div className="relative mx-auto max-w-6xl px-4 py-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between gap-4">
+          <Link
+            href="#top"
+            className="group relative z-20 flex shrink-0 items-baseline gap-2 font-display text-lg font-semibold tracking-tight text-foreground"
+          >
+            <span>{brand.name}</span>
+            <span className="text-xs font-normal text-muted transition-colors group-hover:text-accent">
+              | {brand.brain}
+            </span>
+          </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
-          {nav.links.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              className="text-sm text-foreground/80 transition-colors hover:text-foreground"
+          <nav
+            className="pointer-events-none absolute inset-x-0 top-1/2 hidden -translate-y-1/2 justify-center lg:flex"
+            aria-label="Primary"
+          >
+            <div className="pointer-events-auto flex items-center gap-7 xl:gap-8">
+              {nav.links.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className="text-sm text-foreground/80 transition-colors hover:text-foreground"
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </div>
+          </nav>
+
+          <div className="relative z-20 flex shrink-0 items-center gap-2">
+            <div className="hidden lg:block">
+              <Button href={nav.cta.href} variant="primary">
+                {nav.cta.label}
+              </Button>
+            </div>
+
+            <button
+              type="button"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-foreground lg:hidden"
+              aria-expanded={open}
+              aria-controls="mobile-menu"
+              onClick={() => setOpen((v) => !v)}
             >
-              {l.label}
-            </Link>
-          ))}
-        </nav>
-
-        <div className="hidden lg:block">
-          <Button href={nav.cta.href} variant="primary">
-            {nav.cta.label}
-          </Button>
+              <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
+              {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
         </div>
-
-        <button
-          type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-foreground lg:hidden"
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          onClick={() => setOpen((v) => !v)}
-        >
-          <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
       </div>
 
       <AnimatePresence>
@@ -83,7 +92,10 @@ export function SiteHeader() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+            transition={{
+              duration: 0.22,
+              ease: [0.22, 1, 0.36, 1] as const,
+            }}
             className="border-t border-white/5 bg-background/95 px-4 py-6 backdrop-blur-xl lg:hidden"
           >
             <div className="mx-auto flex max-w-6xl flex-col gap-1">

@@ -1,6 +1,37 @@
 import Link from "next/link";
 import { footer, brand } from "@/data/site-content";
 
+type FooterLink = {
+  label: string;
+  href: string;
+  download?: string;
+};
+
+function FooterLinkItem({ link }: { link: FooterLink }) {
+  const isPdf = link.href.endsWith(".pdf");
+
+  if (isPdf || link.download) {
+    return (
+      <a
+        href={link.href}
+        download={link.download}
+        className="text-sm text-muted transition-colors hover:text-foreground"
+      >
+        {link.label}
+      </a>
+    );
+  }
+
+  return (
+    <Link
+      href={link.href}
+      className="text-sm text-muted transition-colors hover:text-foreground"
+    >
+      {link.label}
+    </Link>
+  );
+}
+
 export function SiteFooter() {
   const year = new Date().getFullYear();
 
@@ -13,6 +44,13 @@ export function SiteFooter() {
               {brand.name}
             </p>
             <p className="mt-2 text-sm text-muted">{footer.description}</p>
+            <a
+              href="/media/athletic-performance-intelligence.pdf"
+              download="Athletic-Performance-Intelligence-Hardware-Agnostic.pdf"
+              className="mt-4 inline-flex text-sm font-medium text-accent underline-offset-4 hover:underline"
+            >
+              Download overview (PDF)
+            </a>
           </div>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {footer.columns.map((col) => (
@@ -22,13 +60,8 @@ export function SiteFooter() {
                 </p>
                 <ul className="mt-4 space-y-2">
                   {col.links.map((l) => (
-                    <li key={l.href}>
-                      <Link
-                        href={l.href}
-                        className="text-sm text-muted transition-colors hover:text-foreground"
-                      >
-                        {l.label}
-                      </Link>
+                    <li key={l.label}>
+                      <FooterLinkItem link={l as FooterLink} />
                     </li>
                   ))}
                 </ul>

@@ -8,10 +8,17 @@ import { cn } from "@/lib/utils";
 
 export function FinalCtaSection() {
   const [submitted, setSubmitted] = useState(false);
+  const [pending, setPending] = useState(false);
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    setPending(true);
+    const form = e.currentTarget;
+    window.setTimeout(() => {
+      setPending(false);
+      setSubmitted(true);
+      form.reset();
+    }, 450);
   }
 
   return (
@@ -23,32 +30,63 @@ export function FinalCtaSection() {
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-accent">
               Enterprise next step
             </p>
-            <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+            <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
               {cta.title}
             </h2>
-            <p className="mt-4 max-w-xl text-base leading-relaxed text-muted">
+            <p className="mt-3 max-w-xl text-base leading-relaxed text-muted">
               {cta.subtitle}
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Button href={cta.primary.href} variant="primary">
-                {cta.primary.label}
-              </Button>
-              <Button href={cta.secondary.href} variant="secondary">
-                {cta.secondary.label}
-              </Button>
-            </div>
+            <p className="mt-6">
+              <a
+                href="/media/athletic-performance-intelligence.pdf"
+                download="Athletic-Performance-Intelligence-Hardware-Agnostic.pdf"
+                className="inline-flex text-sm font-medium text-accent underline-offset-4 transition-colors hover:text-accent/80 hover:underline"
+              >
+                Download platform overview (PDF)
+              </a>
+            </p>
           </div>
 
           <div className="glass rounded-2xl p-6 sm:p-8">
             <form className="space-y-4" onSubmit={onSubmit}>
-              <div className="grid gap-4 sm:grid-cols-2">
+              <fieldset className="space-y-4" disabled={pending || submitted}>
+                <legend className="sr-only">Contact request</legend>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <label className="block text-xs font-medium text-muted">
+                    Name
+                    <input
+                      name="name"
+                      required
+                      autoComplete="name"
+                      placeholder={cta.form.namePlaceholder}
+                      className={cn(
+                        "mt-1.5 w-full rounded-xl border border-white/10 bg-black/30 px-3 py-2.5 text-sm text-foreground placeholder:text-muted/60",
+                        "focus-visible:border-accent/50 focus-visible:outline-none",
+                      )}
+                    />
+                  </label>
+                  <label className="block text-xs font-medium text-muted">
+                    Organization
+                    <input
+                      name="organization"
+                      required
+                      autoComplete="organization"
+                      placeholder={cta.form.orgPlaceholder}
+                      className={cn(
+                        "mt-1.5 w-full rounded-xl border border-white/10 bg-black/30 px-3 py-2.5 text-sm text-foreground placeholder:text-muted/60",
+                        "focus-visible:border-accent/50 focus-visible:outline-none",
+                      )}
+                    />
+                  </label>
+                </div>
                 <label className="block text-xs font-medium text-muted">
-                  Name
+                  Work email
                   <input
-                    name="name"
+                    name="email"
+                    type="email"
                     required
-                    autoComplete="name"
-                    placeholder={cta.form.namePlaceholder}
+                    autoComplete="email"
+                    placeholder={cta.form.emailPlaceholder}
                     className={cn(
                       "mt-1.5 w-full rounded-xl border border-white/10 bg-black/30 px-3 py-2.5 text-sm text-foreground placeholder:text-muted/60",
                       "focus-visible:border-accent/50 focus-visible:outline-none",
@@ -56,52 +94,35 @@ export function FinalCtaSection() {
                   />
                 </label>
                 <label className="block text-xs font-medium text-muted">
-                  Organization
-                  <input
-                    name="organization"
-                    required
-                    autoComplete="organization"
-                    placeholder={cta.form.orgPlaceholder}
+                  Context
+                  <textarea
+                    name="note"
+                    rows={4}
+                    placeholder={cta.form.notePlaceholder}
                     className={cn(
-                      "mt-1.5 w-full rounded-xl border border-white/10 bg-black/30 px-3 py-2.5 text-sm text-foreground placeholder:text-muted/60",
+                      "mt-1.5 w-full resize-y rounded-xl border border-white/10 bg-black/30 px-3 py-2.5 text-sm text-foreground placeholder:text-muted/60",
                       "focus-visible:border-accent/50 focus-visible:outline-none",
                     )}
                   />
                 </label>
+              </fieldset>
+
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                <Button
+                  type="submit"
+                  variant="primary"
+                  className="w-full min-h-[44px] sm:w-auto sm:min-w-[200px]"
+                  disabled={pending || submitted}
+                  aria-busy={pending}
+                >
+                  {pending ? "Sending…" : cta.form.submit}
+                </Button>
               </div>
-              <label className="block text-xs font-medium text-muted">
-                Work email
-                <input
-                  name="email"
-                  type="email"
-                  required
-                  autoComplete="email"
-                  placeholder={cta.form.emailPlaceholder}
-                  className={cn(
-                    "mt-1.5 w-full rounded-xl border border-white/10 bg-black/30 px-3 py-2.5 text-sm text-foreground placeholder:text-muted/60",
-                    "focus-visible:border-accent/50 focus-visible:outline-none",
-                  )}
-                />
-              </label>
-              <label className="block text-xs font-medium text-muted">
-                Context
-                <textarea
-                  name="note"
-                  rows={4}
-                  placeholder={cta.form.notePlaceholder}
-                  className={cn(
-                    "mt-1.5 w-full resize-y rounded-xl border border-white/10 bg-black/30 px-3 py-2.5 text-sm text-foreground placeholder:text-muted/60",
-                    "focus-visible:border-accent/50 focus-visible:outline-none",
-                  )}
-                />
-              </label>
-              <Button type="submit" variant="primary" className="w-full sm:w-auto">
-                {cta.form.submit}
-              </Button>
+
               {submitted ? (
                 <p className="text-sm text-accent" role="status">
-                  Thanks — this demo form captured your submission locally. Connect it
-                  to your backend when ready.
+                  Received — this demo form only simulates submit in the browser. Connect
+                  the action to your CRM or API when ready.
                 </p>
               ) : (
                 <p className="text-xs leading-relaxed text-muted">

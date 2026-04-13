@@ -13,16 +13,21 @@ export const nav = {
     { label: "Tiers", href: "#tiers" },
     { label: "CAIPO", href: "#caipo" },
   ],
-  cta: { label: "Book a Demo", href: "#cta" },
+  cta: { label: "Get in touch", href: "#cta" },
 };
 
 export const hero = {
-  eyebrow: `${brand.name} · Powered by ${brand.brain}`,
+  eyebrow: `${brand.name} | Powered by ${brand.brain}`,
   title: "Athletic Performance Intelligence for modern organizations",
   subtitle:
     "A hardware-agnostic platform that unifies mental, physical, behavioral, and contextual athlete data — then transforms it into structured intelligence for coaches, staff, and performance leaders.",
-  primaryCta: { label: "Book a Demo", href: "#cta" },
+  primaryCta: { label: "Get in touch", href: "#cta" },
   secondaryCta: { label: "Explore the System", href: "#models" },
+  pdfBrief: {
+    label: "Download overview (PDF)",
+    href: "/media/athletic-performance-intelligence.pdf",
+    downloadName: "Athletic-Performance-Intelligence-Hardware-Agnostic.pdf",
+  },
   chips: [
     "Readiness & recovery",
     "Load & risk signals",
@@ -37,8 +42,8 @@ export const media = {
     alt: "Athletes training in a high-performance facility with focused lighting",
   },
   problem: {
-    src: "https://images.unsplash.com/photo-1461896836934-30fdb49c67c6?auto=format&fit=crop&w=1600&q=85",
-    alt: "Stadium tunnel leading to the field, emphasizing performance environment",
+    src: "/media/problem.jpg",
+    alt: "High-performance training environment — athletic preparation and focus",
   },
   solution: {
     src: "https://images.unsplash.com/photo-1576678927484-cc907957088c?auto=format&fit=crop&w=1600&q=85",
@@ -286,9 +291,7 @@ export const whyUs = {
 export const cta = {
   title: "See performance intelligence on your terms",
   subtitle:
-    "Book a demo for a guided walkthrough — or request a consultation to map adoption, integration, and governance for your environment.",
-  primary: { label: "Book a Demo", href: "#cta" },
-  secondary: { label: "Request a Consultation", href: "#cta" },
+    "Share a few details about your organization and priorities. We will follow up with tailored next steps, whether you want a product walkthrough, a scoping conversation, or both.",
   form: {
     namePlaceholder: "Full name",
     orgPlaceholder: "Organization",
@@ -324,6 +327,11 @@ export const footer = {
     {
       title: "Resources",
       links: [
+        {
+          label: "Overview PDF (download)",
+          href: "/media/athletic-performance-intelligence.pdf",
+          download: "Athletic-Performance-Intelligence-Hardware-Agnostic.pdf",
+        },
         { label: "How it works", href: "#how" },
         { label: "Reporting", href: "#reporting" },
         { label: "Why MoodChanger", href: "#why" },
@@ -331,10 +339,7 @@ export const footer = {
     },
     {
       title: "Contact",
-      links: [
-        { label: "Book a demo", href: "#cta" },
-        { label: "Consultation", href: "#cta" },
-      ],
+      links: [{ label: "Get in touch", href: "#cta" }],
     },
   ],
   legal: "© {year} MoodChanger. All rights reserved.",
