@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "MoodChanger | Athletic Performance Intelligence",
     description:
-      "The intelligence layer that turns fragmented athlete data into structured performance insight — with or without wearables.",
+      "The intelligence layer that turns fragmented athlete data into structured performance insight: with or without wearables.",
     type: "website",
   },
 };

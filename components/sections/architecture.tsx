@@ -45,7 +45,7 @@ export function ArchitectureSection() {
             </p>
             <div className="mt-2 h-px w-24 bg-gradient-to-r from-transparent via-white/30 to-transparent" />
             <p className="max-w-xs text-xs leading-relaxed text-muted">
-              Unified intelligence, reporting, and governance — regardless of
+              Unified intelligence, reporting, and governance, regardless of
               where your signals originate.
             </p>
           </div>

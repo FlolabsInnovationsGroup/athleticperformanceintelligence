@@ -54,7 +54,7 @@ export function CaipoSection() {
                   Companion layer
                 </p>
                 <p className="mt-1 text-xs text-muted">
-                  Designed for flexible hardware strategies — not single-vendor lock-in.
+                  Designed for flexible hardware strategies, not single-vendor lock-in.
                 </p>
               </div>
             </div>

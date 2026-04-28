@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-/** Abstract UI composition — decorative, no fabricated metrics. */
+/** Abstract UI composition, decorative, no fabricated metrics. */
 export function DashboardMock({ className }: { className?: string }) {
   return (
     <div

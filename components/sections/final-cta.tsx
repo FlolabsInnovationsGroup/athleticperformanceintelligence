@@ -121,7 +121,7 @@ export function FinalCtaSection() {
 
               {submitted ? (
                 <p className="text-sm text-accent" role="status">
-                  Received — this demo form only simulates submit in the browser. Connect
+                  Received: this demo form only simulates submit in the browser. Connect
                   the action to your CRM or API when ready.
                 </p>
               ) : (

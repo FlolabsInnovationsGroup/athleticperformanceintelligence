@@ -20,7 +20,7 @@ export const hero = {
   eyebrow: `${brand.name} | Powered by ${brand.brain}`,
   title: "Athletic Performance Intelligence for modern organizations",
   subtitle:
-    "A hardware-agnostic platform that unifies mental, physical, behavioral, and contextual athlete data — then transforms it into structured intelligence for coaches, staff, and performance leaders.",
+    "A hardware-agnostic platform that unifies mental, physical, behavioral, and contextual athlete data, then transforms it into structured intelligence for coaches, staff, and performance leaders.",
   primaryCta: { label: "Get in touch", href: "#cta" },
   secondaryCta: { label: "Explore the System", href: "#models" },
   pdfBrief: {
@@ -43,7 +43,7 @@ export const media = {
   },
   problem: {
     src: "/media/problem.jpg",
-    alt: "High-performance training environment — athletic preparation and focus",
+    alt: "High-performance training environment, athletic preparation and focus",
   },
   solution: {
     src: "https://images.unsplash.com/photo-1576678927484-cc907957088c?auto=format&fit=crop&w=1600&q=85",
@@ -62,15 +62,15 @@ export const media = {
 export const problem = {
   title: "Fragmented signals. Manual workflows. Slow decisions.",
   description:
-    "Performance organizations collect more data than ever — yet insight remains siloed, uneven, and hard to operationalize when it matters most.",
+    "Performance organizations collect more data than ever, yet insight remains siloed, uneven, and hard to operationalize when it matters most.",
   items: [
     {
       title: "Fragmented athlete data",
-      body: "Metrics live across files, devices, and departments — never quite aligning into one operational picture.",
+      body: "Metrics live across files, devices, and departments, never quite aligning into one operational picture.",
     },
     {
       title: "Incomplete readiness context",
-      body: "Training load without recovery context — or subjective inputs without objective signals — limits confidence.",
+      body: "Training load without recovery context, or subjective inputs without objective signals, limits confidence.",
     },
     {
       title: "Manual, repetitive workflows",
@@ -78,7 +78,7 @@ export const problem = {
     },
     {
       title: "Insights that do not drive action",
-      body: "Dashboards show activity, not decisions — leaving leaders without clear, repeatable performance intelligence.",
+      body: "Dashboards show activity, not decisions: leaving leaders without clear, repeatable performance intelligence.",
     },
   ],
 };
@@ -87,12 +87,12 @@ export const solution = {
   title: "One intelligence layer. Unified performance truth.",
   lead: `${brand.name}, powered by ${brand.brain}`,
   body: [
-    "FloBrain ingests raw and fragmented inputs — from workflows, integrations, and optional wearables — and structures them into consistent performance models.",
+    "FloBrain ingests raw and fragmented inputs, from workflows, integrations, and various wearables, and structures them into consistent performance models.",
     "The result is decision support for daily operations: clearer prioritization, stronger communication across staff, and a scalable intelligence foundation for the organization.",
   ],
   bullets: [
     "Mental, physical, behavioral, and contextual signals in one framework",
-    "From raw inputs to explainable intelligence — built for coaching workflows",
+    "From raw inputs to explainable intelligence: built for coaching workflows",
     "Flexible adoption: start without hardware, expand with devices on your timeline",
   ],
 };
@@ -105,7 +105,7 @@ export const models = {
     {
       name: "Readiness",
       description:
-        "A consolidated view of preparedness — balancing stress, recovery signals, and constraints.",
+        "A consolidated view of preparedness, balancing stress, recovery signals, and constraints.",
     },
     {
       name: "Load",
@@ -120,7 +120,7 @@ export const models = {
     {
       name: "Risk",
       description:
-        "Early visibility into overload and vulnerability patterns — without reducing athletes to single scores.",
+        "Early visibility into overload and vulnerability patterns, without reducing athletes to single scores.",
     },
     {
       name: "Performance",
@@ -130,7 +130,7 @@ export const models = {
     {
       name: "Context",
       description:
-        "Travel, schedule density, role demands, and environment — the situational layer that shapes interpretation.",
+        "Travel, schedule density, role demands, and environment: the situational layer that shapes interpretation.",
     },
   ],
 };
@@ -138,7 +138,7 @@ export const models = {
 export const architecture = {
   title: "Hardware-agnostic by design",
   subtitle:
-    "Adopt performance intelligence in the way that fits your organization — then scale as your ecosystem matures.",
+    "Adopt performance intelligence in the way that fits your organization, then scale as your ecosystem matures.",
   withoutWearables: {
     title: "Without wearables",
     points: [
@@ -163,7 +163,7 @@ export const architecture = {
 
 export const howItWorks = {
   title: "From onboarding to insight",
-  subtitle: "A disciplined pipeline designed for real organizations — not demo-day fiction.",
+  subtitle: "A disciplined pipeline designed for real organizations, not demo-day fiction.",
   steps: [
     {
       title: "Onboarding",
@@ -171,11 +171,11 @@ export const howItWorks = {
     },
     {
       title: "Workflow & device integration",
-      body: "Connect operational workflows and optional wearables — standardized through FloBrain.",
+      body: "Connect operational workflows and various wearables, standardized through FloBrain.",
     },
     {
       title: "Data collection",
-      body: "Continuous capture with governance-minded structure — built for elite environments.",
+      body: "Continuous capture with governance-minded structure, built for elite environments.",
     },
     {
       title: "Analysis & modeling",
@@ -183,7 +183,7 @@ export const howItWorks = {
     },
     {
       title: "Coaching insights",
-      body: "Actionable views for coaches, scientists, and leaders — aligned to decisions, not noise.",
+      body: "Actionable views for coaches, scientists, and leaders, aligned to decisions, not noise.",
     },
   ],
 };
@@ -191,13 +191,13 @@ export const howItWorks = {
 export const tiers = {
   title: "Consultancy tiers built for adoption",
   subtitle:
-    "Choose the entry point that matches your organization — upgrade as your performance infrastructure matures.",
+    "Choose the entry point that matches your organization, upgrade as your performance infrastructure matures.",
   items: [
     {
       name: "Tier 1",
-      label: "No wearable",
+      label: "Without wearable",
       description:
-        "Stand up performance intelligence using workflows and structured inputs — ideal for fast alignment across staff.",
+        "Stand up performance intelligence using workflows and structured inputs: ideal for fast alignment across staff.",
       highlights: [
         "Core FloBrain models and reporting surfaces",
         "Operational onboarding with clear governance",
@@ -208,7 +208,7 @@ export const tiers = {
       name: "Tier 2",
       label: "With wearables",
       description:
-        "Unify wearable streams alongside workflow data — one intelligence layer, one reporting language.",
+        "Unify wearable streams alongside workflow data: one intelligence layer, one reporting language.",
       highlights: [
         "Device flexibility across athletes and teams",
         "Normalized streams into FloBrain models",
@@ -231,13 +231,13 @@ export const tiers = {
 };
 
 export const reporting = {
-  title: "Reporting built for athletes — and the staff who support them",
+  title: "Reporting built for athletes, and the staff who support them",
   subtitle:
     "Perspective-aware surfaces that keep communication coherent from the training floor to leadership reviews.",
   perspectives: [
     {
       title: "Athlete-facing clarity",
-      body: "Purposeful summaries that respect attention and trust — focused on meaning, not metric overload.",
+      body: "Purposeful summaries that respect attention and trust, focused on meaning, not metric overload.",
       items: ["Readiness framing", "Recovery guidance", "Load awareness", "Role-relevant cues"],
     },
     {
@@ -255,23 +255,23 @@ export const reporting = {
 
 export const caipo = {
   title: "CAIPO",
-  subtitle: "AI wearable companion — ecosystem, not a gimmick",
+  subtitle: "AI wearable companion: ecosystem, not a gimmick",
   description:
-    "CAIPO strengthens the data collection and feedback layer for organizations that want an intelligent companion alongside athlete wear — designed for hardware flexibility and real-world workflows.",
+    "CAIPO strengthens the data collection and feedback layer for organizations that want an intelligent companion alongside athlete wear, designed for hardware flexibility and real-world workflows.",
   points: [
     "Wearable-adjacent intelligence that supports consistent capture",
     "Real-time feedback patterns tuned for coaching environments",
-    "Designed to complement your device strategy — not lock you into one",
+    "Designed to complement your device strategy: not lock you into one",
   ],
 };
 
 export const whyUs = {
   title: "Why MoodChanger",
-  subtitle: "Sport-first intelligence — engineered for adoption, scale, and credibility with performance staff.",
+  subtitle: "Sport-first intelligence: engineered for adoption, scale, and credibility with performance staff.",
   items: [
     {
       title: "Sport-first platform",
-      body: "Built around how elite teams actually operate — not generic wellness charts.",
+      body: "Built around how elite teams actually operate, not generic wellness charts.",
     },
     {
       title: "Device-agnostic ecosystem",
@@ -279,7 +279,7 @@ export const whyUs = {
     },
     {
       title: "Consultancy-backed insight",
-      body: "Tiers and enablement designed for real rollout — from academies to enterprise programs.",
+      body: "Tiers and enablement designed for real rollout: from academies to enterprise programs.",
     },
     {
       title: "Scalable for organizations",
@@ -299,13 +299,13 @@ export const cta = {
     notePlaceholder: "What are you trying to solve this season?",
     submit: "Submit request",
     disclaimer:
-      "This form is a front-end placeholder — wire it to your CRM or email pipeline when ready.",
+      "This form is a front-end placeholder, wire it to your CRM or email pipeline when ready.",
   },
 };
 
 export const footer = {
   description:
-    "Athletic Performance Intelligence by MoodChanger — powered by FloBrain.",
+    "Athletic Performance Intelligence by MoodChanger, powered by FloBrain.",
   columns: [
     {
       title: "Product",
@@ -319,9 +319,9 @@ export const footer = {
     {
       title: "Tiers",
       links: [
-        { label: "Tier 1 — No wearable", href: "#tiers" },
-        { label: "Tier 2 — With wearables", href: "#tiers" },
-        { label: "Tier 3 — Full integration", href: "#tiers" },
+        { label: "Tier 1: Without wearable", href: "#tiers" },
+        { label: "Tier 2: With wearables", href: "#tiers" },
+        { label: "Tier 3: Full integration", href: "#tiers" },
       ],
     },
     {

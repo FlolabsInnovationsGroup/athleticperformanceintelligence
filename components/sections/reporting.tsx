@@ -52,7 +52,7 @@ export function ReportingSection() {
                 Operational clarity
               </p>
               <p className="font-display text-2xl font-semibold leading-tight text-foreground">
-                Dashboard surfaces tuned for decisions — not distraction.
+                Dashboard surfaces tuned for decisions, not distraction.
               </p>
             </div>
             <div className="absolute bottom-4 right-4 hidden w-[min(100%,380px)] sm:block lg:bottom-8 lg:right-8">
