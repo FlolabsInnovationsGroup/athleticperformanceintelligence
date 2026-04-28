@@ -42,8 +42,8 @@ export const media = {
     alt: "Athletes training in a high-performance facility with focused lighting",
   },
   problem: {
-    src: "/media/problem.jpg",
-    alt: "High-performance training environment, athletic preparation and focus",
+    src: "/media/problem-fragmented-signals.png",
+    alt: "Multiple athlete-performance dashboards showing fragmented and conflicting health metrics",
   },
   solution: {
     src: "https://images.unsplash.com/photo-1576678927484-cc907957088c?auto=format&fit=crop&w=1600&q=85",
