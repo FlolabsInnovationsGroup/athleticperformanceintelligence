@@ -49,14 +49,14 @@ export function ReportingSection() {
             <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-transparent" />
             <div className="absolute inset-y-0 left-0 flex w-full max-w-md flex-col justify-center gap-4 p-6 sm:p-10">
               <p className="text-xs font-semibold uppercase tracking-[0.25em] text-accent">
-                Operational clarity
-              </p>
-              <p className="font-display text-2xl font-semibold leading-tight text-foreground">
-                Dashboard surfaces tuned for decisions, not distraction.
-              </p>
-            </div>
-            <div className="absolute bottom-4 right-4 hidden w-[min(100%,380px)] sm:block lg:bottom-8 lg:right-8">
-              <DashboardMock className="shadow-2xl" />
+                  Operational clarity
+                </p>
+                <p className="font-display text-2xl font-semibold leading-tight text-foreground">
+                  Dashboard surfaces tuned for decisions, not distraction.
+                </p>
+              </div>
+            <div className="absolute bottom-4 right-4 hidden w-[min(100%,460px)] sm:block lg:bottom-8 lg:right-8">
+              <DashboardMock previewOnly className="shadow-2xl" />
             </div>
           </div>
         </div>

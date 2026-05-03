@@ -13,24 +13,24 @@ export function Hero() {
   return (
     <div
       id="top"
-      className="relative min-h-[100svh] overflow-hidden pt-28 pb-16 sm:pt-32"
+      className="relative min-h-[100svh] overflow-hidden pt-24 pb-14 sm:pt-28 sm:pb-16 md:pt-32"
     >
       <HeroBackgroundVideo />
       <div className="pointer-events-none absolute inset-0 bg-background/75 sm:bg-background/65" />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background via-background/85 to-transparent lg:via-background/55" />
       <div className="pointer-events-none absolute inset-0 gradient-mesh noise opacity-90" />
-      <div className="pointer-events-none absolute -right-32 top-20 h-[480px] w-[480px] rounded-full bg-accent/10 blur-3xl" />
-      <div className="pointer-events-none absolute -left-40 bottom-0 h-[420px] w-[420px] rounded-full bg-violet/10 blur-3xl" />
+      <div className="pointer-events-none absolute -right-32 top-20 h-[340px] w-[340px] rounded-full bg-accent/10 blur-3xl sm:h-[420px] sm:w-[420px] lg:h-[480px] lg:w-[480px]" />
+      <div className="pointer-events-none absolute -left-40 bottom-0 h-[280px] w-[280px] rounded-full bg-violet/10 blur-3xl sm:h-[360px] sm:w-[360px] lg:h-[420px] lg:w-[420px]" />
 
-      <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:gap-10 lg:px-8">
-        <div className="space-y-6 lg:col-span-6">
+      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:gap-10 lg:px-8">
+        <div className="space-y-6 lg:col-span-5">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-accent/90">
             {hero.eyebrow}
           </p>
-          <h1 className="font-display text-4xl font-semibold leading-[1.05] tracking-tight text-foreground sm:text-5xl lg:text-[3.25rem]">
+          <h1 className="font-display text-3xl font-semibold leading-[1.05] tracking-tight text-foreground sm:text-5xl lg:text-[3.25rem]">
             {hero.title}
           </h1>
-          <p className="max-w-xl text-lg leading-relaxed text-muted">
+          <p className="max-w-xl text-base leading-relaxed text-muted sm:text-lg">
             {hero.subtitle}
           </p>
           <div className="flex flex-wrap gap-3">
@@ -55,30 +55,30 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative lg:col-span-6">
+        <div className="relative lg:col-span-7">
           <motion.div
-            className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.75rem] border border-white/10 bg-black/30 shadow-2xl backdrop-blur-sm sm:aspect-[5/6]"
+            className="relative w-full overflow-hidden rounded-[1.5rem] border border-white/10 bg-black/30 shadow-2xl backdrop-blur-sm sm:rounded-[1.75rem]"
             initial={reduce ? false : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/25 to-transparent" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/90 via-background/25 to-transparent" />
 
-            <div className="absolute inset-0 p-4 sm:p-6">
-              <div className="flex h-full flex-col justify-end gap-4">
+            <div className="relative z-10 p-4 sm:p-6">
+              <div className="grid content-start grid-rows-[auto_auto] gap-3 lg:gap-4">
                 <motion.div
                   initial={reduce ? false : { opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.15, duration: 0.55 }}
-                  className="relative z-10"
+                  className="relative z-10 w-full"
                 >
-                  <DashboardMock />
+                  <DashboardMock compact />
                 </motion.div>
                 <motion.div
                   initial={reduce ? false : { opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.28, duration: 0.55 }}
-                  className="relative z-10 w-[88%] self-end sm:w-4/5"
+                  className="relative z-10 w-[76%] self-end sm:w-[70%] lg:w-[58%]"
                 >
                   <DashboardMockSecondary />
                 </motion.div>
