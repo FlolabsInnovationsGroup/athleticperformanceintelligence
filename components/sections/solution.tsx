@@ -38,7 +38,7 @@ export function SolutionSection() {
                 alt={media.solution.alt}
                 fill
                 sizes="(min-width: 1024px) 45vw, 100vw"
-                className="object-cover"
+                className="object-cover object-[60%_50%]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6">

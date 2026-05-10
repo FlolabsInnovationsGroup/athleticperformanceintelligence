@@ -2,6 +2,13 @@ import type { Metadata } from "next";
 import { DM_Sans, Outfit } from "next/font/google";
 import "./globals.css";
 
+const metadataBase = new URL(
+  process.env.NEXT_PUBLIC_SITE_URL ??
+    (process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : "http://localhost:3000"),
+);
+
 const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
@@ -15,6 +22,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase,
   title: {
     default: "MoodChanger | Athletic Performance Intelligence",
     template: "%s | MoodChanger",
@@ -35,6 +43,13 @@ export const metadata: Metadata = {
     description:
       "The intelligence layer that turns fragmented athlete data into structured performance insight: with or without wearables.",
     type: "website",
+    siteName: "MoodChanger",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MoodChanger | Athletic Performance Intelligence",
+    description:
+      "The intelligence layer that turns fragmented athlete data into structured performance insight: with or without wearables.",
   },
 };
 

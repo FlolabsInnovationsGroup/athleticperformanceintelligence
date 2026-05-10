@@ -40,15 +40,18 @@ export function CaipoSection() {
           </MotionReveal>
 
           <MotionReveal>
-            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-white/10 shadow-2xl sm:aspect-video lg:aspect-[5/6]">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-white/10 bg-black shadow-2xl sm:aspect-video lg:aspect-[5/6]">
               <Image
                 src={media.caipo.src}
                 alt={media.caipo.alt}
                 fill
                 sizes="(min-width: 1024px) 45vw, 100vw"
-                className="object-cover"
+                className="object-contain object-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-violet/10" />
+              <div
+                className="pointer-events-none absolute inset-x-0 bottom-0 h-[min(60%,14rem)] bg-gradient-to-t from-background/95 via-background/45 to-transparent"
+                aria-hidden
+              />
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <p className="font-display text-sm font-semibold text-foreground">
                   Companion layer

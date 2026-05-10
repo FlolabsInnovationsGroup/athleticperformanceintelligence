@@ -46,16 +46,16 @@ export const media = {
     alt: "Multiple athlete-performance dashboards showing fragmented and conflicting health metrics",
   },
   solution: {
-    src: "https://images.unsplash.com/photo-1576678927484-cc907957088c?auto=format&fit=crop&w=1600&q=85",
-    alt: "Coach reviewing athlete preparation in a professional training setting",
+    src: "/media/flobrain-dashboard.png",
+    alt: "Laptop displaying a unified health and fitness performance dashboard with daily activity, weekly progress, heart rate, and goals",
   },
   reporting: {
     src: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=2000&q=85",
     alt: "Team coaching discussion on the sideline during competition",
   },
   caipo: {
-    src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1600&q=85",
-    alt: "Abstract technology light trails suggesting real-time data flow",
+    src: "/media/caipo-device.jpg",
+    alt: "CAIPO wearable hardware",
   },
 };
 
