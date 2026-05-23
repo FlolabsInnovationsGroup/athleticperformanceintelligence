@@ -3,6 +3,7 @@
 import { FormEvent, useState } from "react";
 import { cta } from "@/data/site-content";
 import { Button } from "@/components/ui/button";
+import { Copy } from "@/components/ui/copy";
 import { SectionShell } from "@/components/ui/section-shell";
 import { cn } from "@/lib/utils";
 
@@ -30,12 +31,18 @@ export function FinalCtaSection() {
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-accent">
               Enterprise next step
             </p>
-            <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+            <Copy
+              as="h2"
+              className="mt-3 font-display text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
+            >
               {cta.title}
-            </h2>
-            <p className="mt-3 max-w-xl text-base leading-relaxed text-muted">
+            </Copy>
+            <Copy
+              as="p"
+              className="mt-3 max-w-xl text-base leading-relaxed text-muted"
+            >
               {cta.subtitle}
-            </p>
+            </Copy>
             <p className="mt-6">
               <a
                 href="/media/athletic-performance-intelligence.pdf"

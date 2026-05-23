@@ -46,6 +46,29 @@ body {
   font-family: var(--font-sans);
 }
 
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility text-pretty {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p,
+li,
+blockquote {
+  text-wrap: pretty;
+}
+
 ::selection {
   background: rgba(45, 212, 191, 0.25);
   color: var(--foreground);

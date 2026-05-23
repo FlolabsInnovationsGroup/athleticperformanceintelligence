@@ -1,6 +1,6 @@
 import Link from "next/link";
+import { Copy } from "@/components/ui/copy";
 import { footer, brand } from "@/data/site-content";
-
 type FooterLink = {
   label: string;
   href: string;
@@ -43,7 +43,9 @@ export function SiteFooter() {
             <p className="font-display text-lg font-semibold text-foreground">
               {brand.name}
             </p>
-            <p className="mt-2 text-sm text-muted">{footer.description}</p>
+            <Copy as="p" className="mt-2 text-sm text-muted">
+              {footer.description}
+            </Copy>
             <a
               href="/media/athletic-performance-intelligence.pdf"
               download="Athletic-Performance-Intelligence-Hardware-Agnostic.pdf"
@@ -52,7 +54,7 @@ export function SiteFooter() {
               Download overview (PDF)
             </a>
           </div>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {footer.columns.map((col) => (
               <div key={col.title}>
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-foreground/70">

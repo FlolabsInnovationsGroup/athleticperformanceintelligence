@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { caipo, media } from "@/data/site-content";
 import { MotionReveal } from "@/components/motion/motion-reveal";
+import { Copy } from "@/components/ui/copy";
 import { Button } from "@/components/ui/button";
 import { SectionShell, SectionHeader } from "@/components/ui/section-shell";
 
@@ -25,7 +26,7 @@ export function CaipoSection() {
                   className="flex gap-3 text-sm leading-relaxed text-foreground/90"
                 >
                   <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-violet" />
-                  {p}
+                  <Copy as="span">{p}</Copy>
                 </li>
               ))}
             </ul>
@@ -56,9 +57,9 @@ export function CaipoSection() {
                 <p className="font-display text-sm font-semibold text-foreground">
                   Companion layer
                 </p>
-                <p className="mt-1 text-xs text-muted">
-                  Designed for flexible hardware strategies, not single-vendor lock-in.
-                </p>
+                <Copy as="p" className="mt-1 text-xs text-muted">
+                  Any set-up works with or without a wearable.
+                </Copy>
               </div>
             </div>
           </MotionReveal>

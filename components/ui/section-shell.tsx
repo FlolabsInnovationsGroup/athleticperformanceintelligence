@@ -1,3 +1,4 @@
+import { Copy } from "@/components/ui/copy";
 import { cn } from "@/lib/utils";
 
 export function SectionShell({
@@ -48,13 +49,19 @@ export function SectionHeader({
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="font-display text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+      <Copy
+        as="h2"
+        className="font-display text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
+      >
         {title}
-      </h2>
+      </Copy>
       {subtitle ? (
-        <p className="text-base leading-relaxed text-muted sm:text-lg">
+        <Copy
+          as="p"
+          className="text-base leading-relaxed text-muted sm:text-lg"
+        >
           {subtitle}
-        </p>
+        </Copy>
       ) : null}
     </div>
   );

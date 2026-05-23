@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Chip } from "@/components/ui/chip";
 import { DashboardMock, DashboardMockSecondary } from "@/components/ui/dashboard-mock";
 import { HeroBackgroundVideo } from "@/components/sections/hero-background-video";
+import { Copy } from "@/components/ui/copy";
 
 export function Hero() {
   const reduce = useReducedMotion();
@@ -27,28 +28,40 @@ export function Hero() {
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-accent/90">
             {hero.eyebrow}
           </p>
-          <h1 className="font-display text-3xl font-semibold leading-[1.05] tracking-tight text-foreground sm:text-5xl lg:text-[3.25rem]">
+          <Copy
+            as="h1"
+            className="font-display text-3xl font-semibold leading-[1.05] tracking-tight text-foreground sm:text-5xl lg:text-[3.25rem]"
+          >
             {hero.title}
-          </h1>
-          <p className="max-w-xl text-base leading-relaxed text-muted sm:text-lg">
+          </Copy>
+          <Copy
+            as="p"
+            className="max-w-xl text-base leading-relaxed text-muted sm:text-lg"
+          >
             {hero.subtitle}
-          </p>
-          <div className="flex flex-wrap gap-3">
+          </Copy>
+          <div className="grid w-full grid-cols-2 gap-2.5 sm:gap-3 md:gap-4">
             {hero.chips.map((c) => (
-              <Chip key={c}>{c}</Chip>
+              <Chip
+                key={c}
+                className="w-full justify-center px-3 py-1.5 text-center text-xs sm:px-4 sm:text-sm"
+              >
+                <Copy as="span">{c}</Copy>
+              </Chip>
             ))}
           </div>
-          <div className="flex flex-col flex-wrap gap-3 sm:flex-row sm:items-center">
-            <Button href={hero.primaryCta.href} variant="primary">
-              {hero.primaryCta.label}
-            </Button>
-            <Button href={hero.secondaryCta.href} variant="secondary">
+          <div className="grid w-full grid-cols-1 gap-2.5 min-[420px]:grid-cols-2 sm:gap-3 md:gap-4">
+            <Button
+              href={hero.secondaryCta.href}
+              variant="primary"
+              className="w-full px-4 py-2.5 text-sm sm:px-5 sm:py-3 sm:text-base"
+            >
               {hero.secondaryCta.label}
             </Button>
             <a
               href={hero.pdfBrief.href}
               download={hero.pdfBrief.downloadName}
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-5 py-2.5 text-sm font-medium text-foreground/90 transition-colors hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/40"
+              className="inline-flex w-full items-center justify-center rounded-full border border-accent/40 bg-white/5 px-4 py-2.5 text-center text-sm font-medium leading-snug text-foreground/90 shadow-[0_0_0_1px_rgba(45,212,191,0.12)] transition-colors hover:border-accent/60 hover:bg-accent/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--accent)] sm:px-5 sm:py-3 sm:text-base"
             >
               {hero.pdfBrief.label}
             </a>

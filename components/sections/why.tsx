@@ -1,6 +1,7 @@
 import { Building2, Cpu, Headphones, Layers3 } from "lucide-react";
 import { whyUs } from "@/data/site-content";
 import { MotionReveal } from "@/components/motion/motion-reveal";
+import { Copy } from "@/components/ui/copy";
 import { SectionShell, SectionHeader } from "@/components/ui/section-shell";
 
 const icons = [Layers3, Cpu, Headphones, Building2];
@@ -24,12 +25,18 @@ export function WhySection() {
                   <Icon className="h-6 w-6" aria-hidden />
                 </div>
                 <div>
-                  <h3 className="font-display text-lg font-semibold text-foreground">
+                  <Copy
+                    as="h3"
+                    className="font-display text-lg font-semibold text-foreground"
+                  >
                     {item.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">
+                  </Copy>
+                  <Copy
+                    as="p"
+                    className="mt-2 text-sm leading-relaxed text-muted"
+                  >
                     {item.body}
-                  </p>
+                  </Copy>
                 </div>
               </div>
             </MotionReveal>

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { AlertTriangle, Layers, Split, Workflow } from "lucide-react";
 import { media, problem } from "@/data/site-content";
 import { MotionReveal } from "@/components/motion/motion-reveal";
+import { Copy } from "@/components/ui/copy";
 import { SectionHeader, SectionShell } from "@/components/ui/section-shell";
 import { cn } from "@/lib/utils";
 
@@ -39,10 +40,18 @@ export function ProblemSection() {
                     <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent">
                       <Icon className="h-5 w-5" aria-hidden />
                     </div>
-                    <h3 className="font-display text-lg font-semibold text-foreground">
+                    <Copy
+                      as="h3"
+                      className="font-display text-lg font-semibold text-foreground"
+                    >
                       {item.title}
-                    </h3>
-                    <p className="text-sm leading-relaxed text-muted">{item.body}</p>
+                    </Copy>
+                    <Copy
+                      as="p"
+                      className="text-sm leading-relaxed text-muted"
+                    >
+                      {item.body}
+                    </Copy>
                   </article>
                 </MotionReveal>
               );

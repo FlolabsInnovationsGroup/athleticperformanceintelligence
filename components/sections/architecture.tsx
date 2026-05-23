@@ -1,6 +1,7 @@
 import { ArrowRight, Cpu, Radio } from "lucide-react";
 import { architecture } from "@/data/site-content";
 import { MotionReveal } from "@/components/motion/motion-reveal";
+import { Copy } from "@/components/ui/copy";
 import { SectionShell, SectionHeader } from "@/components/ui/section-shell";
 
 export function ArchitectureSection() {
@@ -19,15 +20,18 @@ export function ArchitectureSection() {
               <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/5 text-accent">
                 <Cpu className="h-5 w-5" aria-hidden />
               </span>
-              <h3 className="font-display text-lg font-semibold text-foreground">
+              <Copy
+                as="h3"
+                className="font-display text-lg font-semibold text-foreground"
+              >
                 {architecture.withoutWearables.title}
-              </h3>
+              </Copy>
             </div>
             <ul className="space-y-3 text-sm leading-relaxed text-muted">
               {architecture.withoutWearables.points.map((p) => (
                 <li key={p} className="flex gap-2">
                   <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-accent/80" />
-                  <span>{p}</span>
+                  <Copy as="span">{p}</Copy>
                 </li>
               ))}
             </ul>
@@ -44,10 +48,13 @@ export function ArchitectureSection() {
               {architecture.center.title}
             </p>
             <div className="mt-2 h-px w-24 bg-gradient-to-r from-transparent via-white/30 to-transparent" />
-            <p className="max-w-xs text-xs leading-relaxed text-muted">
+            <Copy
+              as="p"
+              className="max-w-xs text-xs leading-relaxed text-muted"
+            >
               Unified intelligence, reporting, and governance, regardless of
               where your signals originate.
-            </p>
+            </Copy>
           </div>
         </MotionReveal>
 
@@ -57,15 +64,18 @@ export function ArchitectureSection() {
               <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/5 text-gold">
                 <Radio className="h-5 w-5" aria-hidden />
               </span>
-              <h3 className="font-display text-lg font-semibold text-foreground">
+              <Copy
+                as="h3"
+                className="font-display text-lg font-semibold text-foreground"
+              >
                 {architecture.withWearables.title}
-              </h3>
+              </Copy>
             </div>
             <ul className="space-y-3 text-sm leading-relaxed text-muted">
               {architecture.withWearables.points.map((p) => (
                 <li key={p} className="flex gap-2">
                   <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-gold/80" />
-                  <span>{p}</span>
+                  <Copy as="span">{p}</Copy>
                 </li>
               ))}
             </ul>

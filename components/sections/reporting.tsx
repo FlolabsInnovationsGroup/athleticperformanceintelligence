@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { reporting, media } from "@/data/site-content";
 import { MotionReveal } from "@/components/motion/motion-reveal";
+import { Copy } from "@/components/ui/copy";
 import { DashboardMock } from "@/components/ui/dashboard-mock";
 import { SectionShell, SectionHeader } from "@/components/ui/section-shell";
 
@@ -17,17 +18,24 @@ export function ReportingSection() {
         {reporting.perspectives.map((p, i) => (
           <MotionReveal key={p.title} staggerIndex={i}>
             <div className="glass flex h-full flex-col gap-5 rounded-3xl p-6 sm:p-8">
-              <h3 className="font-display text-xl font-semibold text-foreground">
+              <Copy
+                as="h3"
+                className="font-display text-xl font-semibold text-foreground"
+              >
                 {p.title}
-              </h3>
-              <p className="text-sm leading-relaxed text-muted">{p.body}</p>
+              </Copy>
+              {p.body ? (
+                <Copy as="p" className="text-sm leading-relaxed text-muted">
+                  {p.body}
+                </Copy>
+              ) : null}
               <ul className="grid gap-2 sm:grid-cols-2">
                 {p.items.map((item) => (
                   <li
                     key={item}
                     className="rounded-xl border border-white/5 bg-white/[0.02] px-3 py-2 text-xs font-medium text-foreground/90"
                   >
-                    {item}
+                    <Copy as="span">{item}</Copy>
                   </li>
                 ))}
               </ul>
@@ -51,9 +59,12 @@ export function ReportingSection() {
               <p className="text-xs font-semibold uppercase tracking-[0.25em] text-accent">
                   Operational clarity
                 </p>
-                <p className="font-display text-2xl font-semibold leading-tight text-foreground">
+                <Copy
+                  as="p"
+                  className="font-display text-2xl font-semibold leading-tight text-foreground"
+                >
                   Dashboard surfaces tuned for decisions, not distraction.
-                </p>
+                </Copy>
               </div>
             <div className="absolute bottom-4 right-4 hidden w-[min(100%,460px)] sm:block lg:bottom-8 lg:right-8">
               <DashboardMock previewOnly className="shadow-2xl" />

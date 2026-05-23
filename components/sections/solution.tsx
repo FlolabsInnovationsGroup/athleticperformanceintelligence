@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Check } from "lucide-react";
 import { media, solution, brand } from "@/data/site-content";
 import { MotionReveal } from "@/components/motion/motion-reveal";
+import { Copy } from "@/components/ui/copy";
 import { SectionShell, SectionHeader } from "@/components/ui/section-shell";
 
 export function SolutionSection() {
@@ -21,9 +22,9 @@ export function SolutionSection() {
                   <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
                     <Check className="h-3.5 w-3.5" aria-hidden />
                   </span>
-                  <span className="text-sm leading-relaxed text-foreground/90">
+                  <Copy as="span" className="text-sm leading-relaxed text-foreground/90">
                     {b}
-                  </span>
+                  </Copy>
                 </li>
               </MotionReveal>
             ))}
@@ -45,10 +46,10 @@ export function SolutionSection() {
                 <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-accent">
                   {brand.brain}
                 </p>
-                <p className="mt-2 max-w-sm text-sm text-foreground/90">
+                <Copy as="p" className="mt-2 max-w-sm text-sm text-foreground/90">
                   Structured models, unified reporting, and an adoption path that
                   respects how your organization works today.
-                </p>
+                </Copy>
               </div>
             </div>
           </div>

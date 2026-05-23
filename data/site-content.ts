@@ -20,8 +20,7 @@ export const hero = {
   eyebrow: `${brand.name} | Powered by ${brand.brain}`,
   title: "Athletic Performance Intelligence for modern organizations",
   subtitle:
-    "A hardware-agnostic platform that unifies mental, physical, behavioral, and contextual athlete data, then transforms it into structured intelligence for coaches, staff, and performance leaders.",
-  primaryCta: { label: "Get in touch", href: "#cta" },
+    "A platform that unifies mental, physical, behavioral, and contextual athletic data transforming it into structured intelligence connecting to your preferred device.",
   secondaryCta: { label: "Explore the System", href: "#models" },
   pdfBrief: {
     label: "Download overview (PDF)",
@@ -60,7 +59,7 @@ export const media = {
 };
 
 export const problem = {
-  title: "Fragmented signals. Manual workflows. Slow decisions.",
+  title: "Fragmented signals. Manual workflows. Missed decision windows.",
   description:
     "Performance organizations collect more data than ever, yet insight remains siloed, uneven, and hard to operationalize when it matters most.",
   items: [
@@ -78,17 +77,16 @@ export const problem = {
     },
     {
       title: "Insights that do not drive action",
-      body: "Dashboards show activity, not decisions: leaving leaders without clear, repeatable performance intelligence.",
+      body: "Dashboards track activity, not decisions, leaving leaders without clear direction.",
     },
   ],
 };
 
 export const solution = {
-  title: "One intelligence layer. Unified performance truth.",
-  lead: `${brand.name}, powered by ${brand.brain}`,
+  title: "A unified layer that brings real-time performance into one view.",
+  lead: `Powered by ${brand.brain}`,
   body: [
-    "FloBrain ingests raw and fragmented inputs, from workflows, integrations, and various wearables, and structures them into consistent performance models.",
-    "The result is decision support for daily operations: clearer prioritization, stronger communication across staff, and a scalable intelligence foundation for the organization.",
+    "FloBrain brings your data together into a consistent view of athletic performance, leading to clearer priorities, stronger communication, and more confident decisions across daily operations.",
   ],
   bullets: [
     "Mental, physical, behavioral, and contextual signals in one framework",
@@ -100,17 +98,17 @@ export const solution = {
 export const models = {
   title: "Core intelligence models",
   subtitle:
-    "Six interconnected lenses that translate complex athlete reality into operational language for staff.",
+    "Six connected views that turn complex athlete data into clear insights.",
   items: [
     {
       name: "Readiness",
       description:
-        "A consolidated view of preparedness, balancing stress, recovery signals, and constraints.",
+        "A single view that shows how stress, recovery, and constraints affect readiness.",
     },
     {
       name: "Load",
       description:
-        "Training and competition stress quantified with context so progression stays intentional.",
+        "Training and competition stress, measured with context to optimize progression.",
     },
     {
       name: "Recovery",
@@ -120,39 +118,39 @@ export const models = {
     {
       name: "Risk",
       description:
-        "Early visibility into overload and vulnerability patterns, without reducing athletes to single scores.",
+        "Early insight into overload and risk patterns, without reducing athletes to a single score.",
     },
     {
       name: "Performance",
       description:
-        "Outcome-aligned tracking that connects preparation signals to what the organization values most.",
+        "Structured tracking that shows how preparation leads to results",
     },
     {
       name: "Context",
       description:
-        "Travel, schedule density, role demands, and environment: the situational layer that shapes interpretation.",
+        "Workload, schedule density, role demands, and environment form the context that shapes interpretation.",
     },
   ],
 };
 
 export const architecture = {
-  title: "Hardware-agnostic by design",
+  title: "Hardware-agnostic by design. Powerful with or without devices.",
   subtitle:
     "Adopt performance intelligence in the way that fits your organization, then scale as your ecosystem matures.",
   withoutWearables: {
     title: "Without wearables",
     points: [
-      "Workflow-driven capture and staff inputs",
-      "Structured models from day one",
-      "Fast onboarding for academies and programs starting lean",
+      "Capture data through workflows and inputs.",
+      "Structured from day one.",
+      "Fast onboarding for growing teams.",
     ],
   },
   withWearables: {
     title: "With any wearables",
     points: [
-      "Bring the devices your athletes already use",
-      "Normalize disparate streams into FloBrain intelligence",
-      "Unified reporting across brands and sensor types",
+      "Integration of the devices already in use.",
+      "Turn different data streams into a clear, consistent view.",
+      "Unified reporting across all devices and sensor types.",
     ],
   },
   center: {
@@ -162,55 +160,54 @@ export const architecture = {
 };
 
 export const howItWorks = {
-  title: "From onboarding to insight",
-  subtitle: "A disciplined pipeline designed for real organizations, not demo-day fiction.",
+  title: "From onboarding to optimization",
+  subtitle: "A structured pipeline designed for real-world use, not demo scenarios.",
   steps: [
     {
       title: "Onboarding",
-      body: "Define squads, roles, schedules, and the intelligence surfaces your staff needs.",
+      body: "Define teams, roles, schedules, and the key insights your team relies on.",
     },
     {
       title: "Workflow & device integration",
-      body: "Connect operational workflows and various wearables, standardized through FloBrain.",
+      body: "Unify your workflows and wearables into one standardized system.",
     },
     {
       title: "Data collection",
-      body: "Continuous capture with governance-minded structure, built for elite environments.",
+      body: "Continuous data capture with a structured, reliable foundation built for high-performance environments.",
     },
     {
       title: "Analysis & modeling",
-      body: "FloBrain applies the core models to produce consistent, comparable intelligence.",
+      body: "FloBrain applies its core models to turn data into consistent, comparable insights.",
     },
     {
       title: "Coaching insights",
-      body: "Actionable views for coaches, scientists, and leaders, aligned to decisions, not noise.",
+      body: "Clear, actionable views that focus on decisions, not noise.",
     },
   ],
 };
 
 export const tiers = {
-  title: "Consultancy tiers built for adoption",
+  title: "Start at the level that fits your team, and grow as your needs evolve.",
   subtitle:
     "Choose the entry point that matches your organization, upgrade as your performance infrastructure matures.",
   items: [
     {
       name: "Tier 1",
       label: "Without wearable",
-      description:
-        "Stand up performance intelligence using workflows and structured inputs: ideal for fast alignment across staff.",
+      description: "Turn workflows and inputs into performance insights",
       highlights: [
-        "Core FloBrain models and reporting surfaces",
-        "Operational onboarding with clear governance",
-        "Expand later without rebuilding your foundation",
+        "Core models and reporting brought together.",
+        "Onboarding designed for clarity and structure.",
+        "A foundation that grows with you over time.",
       ],
     },
     {
       name: "Tier 2",
       label: "With wearables",
       description:
-        "Unify wearable streams alongside workflow data: one intelligence layer, one reporting language.",
+        "All your data together, wearables and workflows, in one clear view.",
       highlights: [
-        "Device flexibility across athletes and teams",
+        "Flexible device use from individual to team level",
         "Normalized streams into FloBrain models",
         "Deeper continuity for readiness, recovery, and load decisions",
       ],
@@ -220,7 +217,7 @@ export const tiers = {
       name: "Tier 3",
       label: "Full custom system",
       description:
-        "End-to-end integration for organizations that require bespoke pipelines, advanced governance, and full-stack alignment.",
+        "End-to-end integration for organizations that need a setup tailored to them, with clear structure and alignment.",
       highlights: [
         "Custom integration architecture",
         "Advanced operational workflows",
@@ -231,18 +228,18 @@ export const tiers = {
 };
 
 export const reporting = {
-  title: "Reporting built for athletes, and the staff who support them",
+  title: "Reporting that keeps teams and coach's goals aligned",
   subtitle:
-    "Perspective-aware surfaces that keep communication coherent from the training floor to leadership reviews.",
+    "Clear views for every role. Keeping consistent communication across all levels.",
   perspectives: [
     {
-      title: "Athlete-facing clarity",
+      title: "Built for athlete clarity",
       body: "Purposeful summaries that respect attention and trust, focused on meaning, not metric overload.",
       items: ["Readiness framing", "Recovery guidance", "Load awareness", "Role-relevant cues"],
     },
     {
-      title: "Coach & staff operations",
-      body: "Operational views for prioritization, intervention planning, and cross-functional alignment.",
+      title: "Coach & Team operations",
+      body: "Operational views designed for prioritization, planning, and cross-team alignment.",
       items: [
         "Load management",
         "Recovery analysis",
@@ -255,34 +252,34 @@ export const reporting = {
 
 export const caipo = {
   title: "CAIPO",
-  subtitle: "AI wearable companion: ecosystem, not a gimmick",
+  subtitle: "AI wearable companion. Connected by design.",
   description:
     "CAIPO strengthens the data collection and feedback layer for organizations that want an intelligent companion alongside athlete wear, designed for hardware flexibility and real-world workflows.",
   points: [
-    "Wearable-adjacent intelligence that supports consistent capture",
-    "Real-time feedback patterns tuned for coaching environments",
-    "Designed to complement your device strategy: not lock you into one",
+    "Built to complement your performance strategy, not limit it.",
+    "Real-time feedback, built for performance optimization.",
+    "Consistent data capture across wearable and non-wearable inputs.",
   ],
 };
 
 export const whyUs = {
   title: "Why MoodChanger",
-  subtitle: "Sport-first intelligence: engineered for adoption, scale, and credibility with performance staff.",
+  subtitle: "Built for sport. Ready to scale. Trusted to perform.",
   items: [
     {
-      title: "Sport-first platform",
-      body: "Built around how elite teams actually operate, not generic wellness charts.",
+      title: "Platform built for sport",
+      body: "Built for real teams. Not just generic wellness.",
     },
     {
-      title: "Device-agnostic ecosystem",
-      body: "Unify streams without forcing a single hardware bet across your organization.",
+      title: "Device-optional platform",
+      body: "Unify data across sources without depending on any devices",
     },
     {
-      title: "Consultancy-backed insight",
-      body: "Tiers and enablement designed for real rollout: from academies to enterprise programs.",
+      title: "Expert-driven insights",
+      body: "Designed to scale from small organizations to enterprise.",
     },
     {
-      title: "Scalable for organizations",
+      title: "Scalable flexibility",
       body: "A coherent intelligence layer that stays consistent as squads, seasons, and systems evolve.",
     },
   ],
@@ -314,14 +311,6 @@ export const footer = {
         { label: "Models", href: "#models" },
         { label: "Architecture", href: "#architecture" },
         { label: "CAIPO", href: "#caipo" },
-      ],
-    },
-    {
-      title: "Tiers",
-      links: [
-        { label: "Tier 1: Without wearable", href: "#tiers" },
-        { label: "Tier 2: With wearables", href: "#tiers" },
-        { label: "Tier 3: Full integration", href: "#tiers" },
       ],
     },
     {

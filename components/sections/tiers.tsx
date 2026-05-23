@@ -2,6 +2,7 @@ import { Sparkles } from "lucide-react";
 import { tiers } from "@/data/site-content";
 import { MotionReveal } from "@/components/motion/motion-reveal";
 import { Button } from "@/components/ui/button";
+import { Copy } from "@/components/ui/copy";
 import { SectionShell, SectionHeader } from "@/components/ui/section-shell";
 import { cn } from "@/lib/utils";
 
@@ -35,18 +36,24 @@ export function TiersSection() {
                 </div>
               ) : null}
 
-              <h3 className="font-display text-2xl font-semibold text-foreground">
+              <Copy
+                as="h3"
+                className="font-display text-2xl font-semibold text-foreground"
+              >
                 {tier.label}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted">
+              </Copy>
+              <Copy
+                as="p"
+                className="mt-3 text-sm leading-relaxed text-muted"
+              >
                 {tier.description}
-              </p>
+              </Copy>
 
               <ul className="mt-6 flex-1 space-y-3 border-t border-white/10 pt-6 text-sm text-foreground/85">
                 {tier.highlights.map((h) => (
                   <li key={h} className="flex gap-2">
                     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent/80" />
-                    <span>{h}</span>
+                    <Copy as="span">{h}</Copy>
                   </li>
                 ))}
               </ul>

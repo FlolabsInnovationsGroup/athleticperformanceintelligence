@@ -91,7 +91,7 @@ export function DashboardMock({
               <div className="border-b border-white/8 px-2.5 pt-1.5">
                 <div className="flex items-center gap-4 text-[9px]">
                   <span className="border-b border-accent pb-1 font-medium text-accent">Overview</span>
-                  <span className="pb-1 text-muted">Squad view</span>
+                  <span className="pb-1 text-muted">Team overview</span>
                 </div>
               </div>
 
