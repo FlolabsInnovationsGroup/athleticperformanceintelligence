@@ -33,8 +33,6 @@ function FooterLinkItem({ link }: { link: FooterLink }) {
 }
 
 export function SiteFooter() {
-  const year = new Date().getFullYear();
-
   return (
     <footer className="border-t border-white/10 bg-black/20">
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
@@ -70,9 +68,6 @@ export function SiteFooter() {
               </div>
             ))}
           </div>
-        </div>
-        <div className="mt-12 border-t border-white/10 pt-8 text-xs text-muted">
-          {footer.legal.replace("{year}", String(year))}
         </div>
       </div>
     </footer>

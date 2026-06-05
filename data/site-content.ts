@@ -331,5 +331,4 @@ export const footer = {
       links: [{ label: "Get in touch", href: "#cta" }],
     },
   ],
-  legal: "© {year} MoodChanger. All rights reserved.",
 };
