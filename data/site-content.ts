@@ -280,7 +280,7 @@ export const whyUs = {
     },
     {
       title: "Scalable flexibility",
-      body: "A coherent intelligence layer that stays consistent as squads, seasons, and systems evolve.",
+      body: "A unified intelligence layer that evolves with your organization while keeping athletes, staff, and performance goals aligned.",
     },
   ],
 };

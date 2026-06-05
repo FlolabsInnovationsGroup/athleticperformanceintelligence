@@ -19,8 +19,8 @@ export function WhySection() {
         {whyUs.items.map((item, i) => {
           const Icon = icons[i] ?? Layers3;
           return (
-            <MotionReveal key={item.title} staggerIndex={i}>
-              <div className="glass flex gap-4 rounded-2xl p-6 transition-colors hover:border-white/15">
+            <MotionReveal key={item.title} staggerIndex={i} className="h-full">
+              <div className="glass flex h-full gap-4 rounded-2xl p-6 transition-colors hover:border-white/15">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gold/10 text-gold">
                   <Icon className="h-6 w-6" aria-hidden />
                 </div>
