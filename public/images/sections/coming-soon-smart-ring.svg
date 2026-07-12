@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" role="img" aria-label="Smart Ring placeholder">
+  <rect width="800" height="450" fill="#dfe9ec"/>
+  <rect x="48" y="48" width="704" height="354" rx="12" fill="#c5d6de" stroke="#9eb8c4" stroke-width="2"/>
+  <text x="400" y="218" text-anchor="middle" fill="#4a6272" font-family="system-ui, sans-serif" font-size="22" font-weight="600">Smart Ring</text>
+  <text x="400" y="252" text-anchor="middle" fill="#6b8494" font-family="system-ui, sans-serif" font-size="14">Image placeholder</text>
+</svg>
