@@ -2,22 +2,12 @@ import {
   assets, brand, careerPath, orderedRoles, origin, questions, roleKind, rolePath, trackFor, tracks,
 } from "./catalog.js";
 
-const hubTitle = "Sports Science Careers & Sports Technology Internships";
+const hubTitle = "Sports Science Careers and Internships";
 const hubDescription =
-  "Read full descriptions for internships in sports science, AI, wearables and product, and for a Research Associate role for PhDs and experienced specialists.";
-const shareImage = `${assets}/careers-share.jpg`;
+  "Read full descriptions for sports science and sports technology internships and a Research Associate role in athlete performance research.";
+const stadium = `${assets}/stadium-1024.webp`;
+const stadiumAlt = "Aerial view of a football pitch and running track";
 const brandId = `${origin}/#organization`;
-
-const icons = {
-  moon: '<path d="M20.4 14.6A8.5 8.5 0 0 1 9.4 3.6a8.5 8.5 0 1 0 11 11Z"/>',
-  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2m-3-7.07-1.41 1.42M6.34 17.66l-1.41 1.41"/>',
-  menu: '<path d="M4 8h16M4 16h16"/>',
-  plus: '<path d="M12 5v14M5 12h14"/>',
-};
-
-function icon(name) {
-  return `<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${icons[name]}</svg>`;
-}
 
 function escapeHtml(value) {
   const entities = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };
@@ -58,12 +48,9 @@ function header(productBase, onHub) {
         <span>${brand}</span>
       </a>
       <nav class="desktop-nav" aria-label="Main navigation">${links}</nav>
-      <a class="button small header-action" href="${careerPath}#roles">Browse roles</a>
-      <button type="button" class="theme-toggle" data-theme-toggle aria-label="Dark mode" aria-pressed="false">
-        <span class="moon">${icon("moon")}</span><span class="sun">${icon("sun")}</span>
-      </button>
+      <button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false">Dark mode</button>
       <details class="mobile-nav">
-        <summary aria-label="Main navigation menu">${icon("menu")}</summary>
+        <summary>Menu</summary>
         <nav aria-label="Mobile navigation">${links}</nav>
       </details>
     </div>
@@ -74,15 +61,12 @@ function footer(productBase) {
   return `
   <footer class="footer">
     <div class="wrap footer-inner">
-      <div>
-        <a class="wordmark" href="${productBase}/">
-          <img src="/logo.svg" alt="" width="34" height="34" loading="lazy">
-          <span>${brand}</span>
-        </a>
-        <p>Understand what helps each athlete perform at their best.</p>
-      </div>
+      <a class="wordmark" href="${productBase}/">
+        <img src="/logo.svg" alt="" width="34" height="34" loading="lazy">
+        <span>${brand}</span>
+      </a>
       <nav aria-label="Footer navigation">
-        <a href="${careerPath}#roles">Browse roles</a>
+        <a href="${careerPath}#roles">Job descriptions</a>
         <a href="${careerPath}#methodology">Athlete performance methodology</a>
         <a href="${productBase}/#signature">Peak Performance Signature</a>
       </nav>
@@ -113,15 +97,15 @@ function page({ title, description, path, body, graph = [], onHub = false, previ
   <meta property="og:title" content="${metadata.title}">
   <meta property="og:description" content="${metadata.description}">
   <meta property="og:url" content="${metadata.canonical}">
-  <meta property="og:image" content="${origin + shareImage}">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Athletic Performance Intelligence careers over an aerial view of a stadium">
+  <meta property="og:image" content="${origin + stadium}">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="786">
+  <meta property="og:image:alt" content="${stadiumAlt}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${metadata.title}">
   <meta name="twitter:description" content="${metadata.description}">
-  <meta name="twitter:image" content="${origin + shareImage}">
-  <meta name="twitter:image:alt" content="Athletic Performance Intelligence careers over an aerial view of a stadium">
+  <meta name="twitter:image" content="${origin + stadium}">
+  <meta name="twitter:image:alt" content="${stadiumAlt}">
   <link rel="icon" href="/logo.svg" type="image/svg+xml">
   <link rel="preload" href="${assets}/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin>
   <script>try{if(localStorage.getItem("api-site-theme")==="dark")document.documentElement.dataset.theme="dark"}catch{}</script>
@@ -142,40 +126,19 @@ function brandOrganization() {
   return { "@type": "Organization", "@id": brandId, name: brand, url: `${origin}/`, logo: `${origin}/logo.svg` };
 }
 
-function fieldLines() {
-  return `<svg class="field-lines" viewBox="0 0 560 380" fill="none" aria-hidden="true">
-    <path d="M0 352h184c166 0 300-134 300-300V0M0 372h184c177 0 320-143 320-320V0M0 332h184c155 0 280-125 280-280V0M0 312h184c144 0 260-116 260-260V0M0 292h184c133 0 240-107 240-240V0M0 272h184c122 0 220-98 220-220V0M0 252h184c111 0 200-89 200-200V0M0 232h184c100 0 180-80 180-180V0" stroke="currentColor"/>
-  </svg>`;
-}
-
 function hubHero() {
   return `
   <section class="hero" aria-labelledby="hero-title">
-    <img class="hero-image" src="${assets}/stadium-1024.webp"
-      srcset="${assets}/stadium-640.webp 640w, ${assets}/stadium-1024.webp 1024w"
-      sizes="(min-width: 900px) 86vw, 100vw"
-      alt="Aerial view of a football pitch and running track inside a stadium"
-      width="1024" height="786" fetchpriority="high">
-    <div class="hero-wash"></div>
     <div class="wrap hero-inner">
       <div class="hero-copy">
-        <p class="eyebrow on-image"><span></span>Sports science and technology careers</p>
-        <h1 id="hero-title">Build what helps <em>athletes perform.</em></h1>
-        <p class="hero-lead">Work on questions that matter to athletes and coaches. Explore sports science and technology internships, or lead applied studies as a Research Associate.</p>
-        <div class="hero-actions">
-          <a class="button" href="#roles">Explore roles</a>
-          <a class="text-link inverse" href="#methodology">How we work</a>
-        </div>
+        <h1 id="hero-title">Sports science careers and internships</h1>
+        <p class="hero-lead">We study how training, sleep, recovery and travel affect the way each athlete performs. Our sports science and technology internships help turn that research into tools for athletes and coaches.</p>
+        <p class="hero-lead">The Research Associate role is for PhD holders and experienced subject matter experts ready to lead applied studies.</p>
       </div>
-      <aside class="hero-note" aria-label="A question we study">
-        <svg aria-hidden="true" width="118" height="34" viewBox="0 0 118 34" fill="none">
-          <path d="M1 30h116M1 16h116" stroke="#d2fffa" stroke-opacity=".23"/>
-          <path d="m1 25 13-3 14 1 12-8 14 3 13-7 13 2 12-7 12 1 12-5" stroke="#7af0e4" stroke-width="1.75"/>
-          <circle cx="116" cy="2" r="2" fill="#7af0e4"/>
-        </svg>
-        <span>One athlete’s own baseline</span>
-        <p>What changes before the result changes?</p>
-      </aside>
+      <img class="hero-image" src="${stadium}"
+        srcset="${assets}/stadium-640.webp 640w, ${stadium} 1024w"
+        sizes="(min-width: 1280px) 610px, (min-width: 761px) 48vw, 94vw"
+        alt="${stadiumAlt}" width="1024" height="786" fetchpriority="high">
     </div>
   </section>`;
 }
@@ -184,11 +147,10 @@ function roleEntry(role) {
   const labels = roleLabels(role);
   return `
   <article class="role-entry" aria-labelledby="role-${role.slug}">
-    <header class="role-entry-header">${roleKind(role) === "research" ? '\n      <p class="eyebrow">Research role</p>' : ""}
-      <h4 id="role-${role.slug}">${escapeHtml(role.title)}</h4>
+    <header class="role-entry-header">
+      <h4 id="role-${role.slug}"><a href="${rolePath(role)}">${escapeHtml(role.title)}</a></h4>
       <p>${escapeHtml(role.lead)}</p>
     </header>${roleDescription(role, labels, true)}
-    <a class="text-link" href="${rolePath(role)}" aria-label="Open role page for ${escapeHtml(role.title)}">Role page</a>
   </article>`;
 }
 
@@ -196,8 +158,7 @@ function roleListings() {
   return `
   <section class="role-listings wrap" id="roles" aria-labelledby="roles-title">
     <header class="listings-head">
-      <h2 id="roles-title">Explore the roles</h2>
-      <p>Scroll through the job descriptions to see what you’d work on, the experience you’d bring, and a sample project for each role.</p>
+      <h2 id="roles-title">Job descriptions</h2>
     </header>${tracks.map((track) => `
     <section class="track" id="${track.key}" aria-labelledby="title-${track.key}">
       <div class="track-intro">
@@ -212,29 +173,14 @@ function roleListings() {
 function program(productBase) {
   return `
   <div class="program">
-    <section class="wrap program-inner" id="program" aria-labelledby="program-title">
-      <div class="program-intro">
-        <p class="eyebrow">How we work</p>
-        <h2 id="program-title">Start with the athlete’s question</h2>
-        <p>A team wants to understand a dip in performance. A sports scientist might compare the athlete’s recent sleep and training with their own history. A data engineer checks where the measurements came from. A designer helps the coach see what’s worth discussing.</p>
-        <a class="text-link" href="${productBase}/#signature">Explore the Peak Performance Signature</a>
-      </div>
-      <div class="program-panel">
-        <p class="eyebrow">What a project can involve</p>
-        <dl>
-          <div><dt>Body</dt><dd>Sleep, recovery, fueling and physiology.</dd></div>
-          <div><dt>Mind</dt><dd>Attention, cognition and mental readiness.</dd></div>
-          <div><dt>Context</dt><dd>Travel, environment and daily routines.</dd></div>
-          <div><dt>Performance</dt><dd>Training load, sport-specific output and competition results.</dd></div>
-        </dl>
-      </div>
+    <section class="wrap program-intro" id="program" aria-labelledby="program-title">
+      <h2 id="program-title">Athlete performance research</h2>
+      <p>When a coach asks why an athlete’s performance has changed, we start with the athlete’s own history. We compare recent training, sleep, travel and competition results, then check whether the measurements are reliable enough to guide the next decision.</p>
+      <a class="text-link" href="${productBase}/#signature">Peak Performance Signature</a>
     </section>
     <section class="wrap method-overview" id="methodology" aria-labelledby="methodology-title">
-      <div>
-        <p class="eyebrow">Athlete performance methodology</p>
-        <h2 id="methodology-title">How we use Loop Engineering and RSI</h2>
-        <p>We use these methods to help athletes improve performance. One study might test whether changing recovery timing helps an athlete feel more ready for their next session. Every role applies the same discipline to its own work.</p>
-      </div>
+      <h2 id="methodology-title">Loop Engineering and Recursive Self Improvement</h2>
+      <p>We use Loop Engineering and Recursive Self Improvement (RSI) in every role. In sports science, that could mean testing whether a change in recovery timing helps an athlete feel ready for the next session, then using the result to improve the next study.</p>
       <dl class="method-steps">
         <div>
           <dt>Loop Engineering</dt>
@@ -252,16 +198,12 @@ function program(productBase) {
 function faq() {
   return `
   <section class="faq wrap" id="questions" aria-labelledby="faq-title">
-    <div>
-      <p class="eyebrow">Applicant questions</p>
-      <h2 id="faq-title">Before you choose a role</h2>
-    </div>
-    <div class="faq-list">
-      ${questions.map(({ question, answer }) => `
-        <details>
-          <summary><span>${escapeHtml(question)}</span>${icon("plus")}</summary>
-          <p>${escapeHtml(answer)}</p>
-        </details>`).join("")}
+    <h2 id="faq-title">Applicant questions</h2>
+    <div class="faq-list">${questions.map(({ question, answer }) => `
+      <section>
+        <h3>${escapeHtml(question)}</h3>
+        <p>${escapeHtml(answer)}</p>
+      </section>`).join("")}
     </div>
   </section>`;
 }
@@ -290,8 +232,8 @@ export function renderHub({ preview = false } = {}) {
 
 function roleLabels(role) {
   return roleKind(role) === "research"
-    ? { type: "Research role", about: "About the role", work: "What you’ll lead", fit: "Who this role is for" }
-    : { type: "Internship pathway", about: "About the internship", work: "What you could work on", fit: "Skills and interests" };
+    ? { about: "About the role", work: "What you’ll lead", fit: "Research experience" }
+    : { about: "About the internship", work: "Responsibilities", fit: "Skills and experience" };
 }
 
 function roleList(heading, items, level) {
@@ -315,7 +257,6 @@ function roleDescription(role, labels, inline = false) {
       ${roleList(labels.fit, role.skills, level)}
     </div>
     <section class="role-method" id="${methodId}" aria-labelledby="${methodId}-title">
-      <p class="eyebrow">How you’ll improve the work</p>
       <${level} id="${methodId}-title">Loop Engineering and Recursive Self Improvement</${level}>
       <dl class="method-steps">
         <div><dt>Loop Engineering</dt><dd>${escapeHtml(role.method.loop)}</dd></div>
@@ -323,7 +264,6 @@ function roleDescription(role, labels, inline = false) {
       </dl>${inline ? "" : `\n      <a class="text-link" href="${careerPath}#methodology">See how we apply RSI to athlete performance</a>`}
     </section>
     <section class="sample-project">
-      <p class="eyebrow">A practical example</p>
       <${level}>Sample project</${level}>
       <p>${escapeHtml(role.project)}</p>
     </section>
@@ -339,17 +279,12 @@ function relatedRoles(role, track) {
   <section class="related" aria-labelledby="related-title">
     <div class="wrap">
       <div class="related-head">
-        <h2 id="related-title">Explore related roles</h2>
-        <a class="text-link" href="${careerPath}#roles">View all roles</a>
+        <h2 id="related-title">Related roles</h2>
+        <a class="text-link" href="${careerPath}#roles">All job descriptions</a>
       </div>
-      <div class="related-grid">
-        ${related.map((candidate) => `
-        <a href="${rolePath(candidate)}">
-          <p class="eyebrow">${roleKind(candidate) === "research" ? "Research role" : escapeHtml(candidate.category)}</p>
-          <h3>${escapeHtml(candidate.title)}</h3>
-          <p>${escapeHtml(candidate.lead)}</p>
-        </a>`).join("")}
-      </div>
+      <ul class="related-list">${related.map((candidate) => `
+        <li><a class="text-link" href="${rolePath(candidate)}">${escapeHtml(candidate.title)}</a></li>`).join("")}
+      </ul>
     </div>
   </section>`;
 }
@@ -373,21 +308,18 @@ export function renderRole(role, { preview = false } = {}) {
       </nav>
     </div>
     <section class="role-hero" aria-labelledby="role-title">
-      ${fieldLines()}
       <div class="wrap role-hero-inner">
-        <p class="eyebrow on-image"><span></span>${research ? labels.type : escapeHtml(track.name)}</p>
         <h1 id="role-title">${escapeHtml(role.title)}</h1>
         <p>${escapeHtml(role.lead)}</p>
       </div>
     </section>
     <div class="wrap role-layout">${roleDescription(role, labels)}
       <aside class="role-aside" aria-labelledby="pathway-title">
-        <p class="eyebrow">${labels.type}</p>
         <h2 id="pathway-title">Application details</h2>
         <p>Application instructions will appear here when available.</p>
         <a class="text-link" href="#role-method">How this role uses RSI</a>
         <a class="text-link" href="${careerPath}#questions">Applicant questions</a>
-        <a class="aside-discipline" href="${careerPath}#${track.key}">More in ${escapeHtml(track.name)}</a>
+        <a class="text-link" href="${careerPath}#${track.key}">${escapeHtml(track.name)} roles</a>
       </aside>
     </div>
     ${research ? "" : relatedRoles(role, track)}`,
@@ -410,10 +342,8 @@ export function renderNotFound() {
     path: careerPath,
     noindex: true,
     body: `<section class="wrap not-found">
-      <p class="eyebrow">Careers</p>
       <h1>We couldn’t find that role.</h1>
-      <p>Browse the directory to find a role that fits your interests.</p>
-      <a class="button" href="${careerPath}#roles">Explore roles</a>
+      <a class="text-link" href="${careerPath}#roles">Job descriptions</a>
     </section>`,
   });
 }

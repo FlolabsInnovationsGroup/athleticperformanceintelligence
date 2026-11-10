@@ -37,7 +37,7 @@ const disciplines = [
   {
     key: "growth-partnerships",
     name: "Growth & Partnerships",
-    description: "Understand how sports organizations work and communicate the value of better evidence.",
+    description: "Talk with sports organizations about how they use performance data and what they need from new tools.",
   },
   {
     key: "operations-people",
@@ -55,27 +55,27 @@ export const trackFor = (role) => tracks.find((track) => track.name === role.cat
 
 export const questions = [
   {
-    question: "What kinds of roles can I explore?",
-    answer: "The careers page covers internships in sports science, neuroscience, AI, engineering, wearables, design, research, partnerships and operations. Experienced researchers can also read about the Research Associate role.",
+    question: "What do sports science interns work on?",
+    answer: "Sports science interns study how athletes respond to training, recovery, travel and cognitive demands. Other internships work on wearable sensors, athlete data, performance models and the tools coaches use to interpret the results.",
   },
   {
     question: "Who should consider the Research Associate role?",
-    answer: "PhD holders, doctoral candidates, postdocs and experienced subject matter experts who can lead applied research. Relevant fields include sports science, physiology, biomechanics, neuroscience, statistics, machine learning and wearable sensing.",
+    answer: "The Research Associate role is for PhD holders, doctoral candidates, postdocs and experienced subject matter experts with a record of applied research. Relevant fields include sports science, physiology, biomechanics, neuroscience, statistics, machine learning and wearable sensing.",
   },
   {
     question: "Are the internships remote?",
-    answer: "The pathways are designed for remote collaboration. Device testing, partner meetings and some research activities may require in-person arrangements. Check the role page for placement details as they are confirmed.",
+    answer: "Most collaboration is designed to happen remotely. Device testing, partner meetings and some research activities may need to happen in person. Placement details will appear on the relevant role page as they’re confirmed.",
   },
   {
     question: "Do I need experience working with professional athletes?",
-    answer: "Relevant coursework, independent projects, research or transferable professional experience can help you show how you would contribute. Each role page explains the skills and interests relevant to that work.",
+    answer: "For internships, relevant coursework, independent projects, research and experience from other fields can show how you’d contribute. Read the skills and experience section for the role you’re considering.",
   },
   {
     question: "What kind of athlete data would I work with?",
-    answer: "Depending on the role, projects can use training logs, check-ins, sensor data or competition results. Early experiments can use synthetic or appropriately consented data. Each project should document who can access the data and what the evidence can support.",
+    answer: "Projects may use training logs, athlete check-ins, wearable sensor readings or competition results. Early tests can use simulated data or data athletes have consented to share. Teams document who can access it and what conclusions it supports.",
   },
   {
     question: "How do I apply?",
-    answer: "Scroll through the role descriptions to review the work, relevant experience and sample projects. Application instructions will appear on the relevant role page when available.",
+    answer: "Each role page will list application instructions when they’re available. You can read the responsibilities, skills and sample projects here now.",
   },
 ];
