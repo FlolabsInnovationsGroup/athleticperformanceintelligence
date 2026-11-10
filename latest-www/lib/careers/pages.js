@@ -1,16 +1,14 @@
 import {
-  assets, brand, careerPath, internshipCount, orderedRoles, origin, questions,
-  researchAssociate, roleKind, rolePath, trackFor, tracks,
+  assets, brand, careerPath, orderedRoles, origin, questions, roleKind, rolePath, trackFor, tracks,
 } from "./catalog.js";
 
 const hubTitle = "Sports Science Careers & Sports Technology Internships";
 const hubDescription =
-  `Explore ${internshipCount} internships in sports science, AI, wearables and product, plus a Research Associate role for PhDs and experienced specialists.`;
+  "Read full descriptions for internships in sports science, AI, wearables and product, and for a Research Associate role for PhDs and experienced specialists.";
 const shareImage = `${assets}/careers-share.jpg`;
 const brandId = `${origin}/#organization`;
 
 const icons = {
-  search: '<circle cx="10.75" cy="10.75" r="5.75"/><path d="m15 15 4 4"/>',
   moon: '<path d="M20.4 14.6A8.5 8.5 0 0 1 9.4 3.6a8.5 8.5 0 1 0 11 11Z"/>',
   sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2m-3-7.07-1.41 1.42M6.34 17.66l-1.41 1.41"/>',
   menu: '<path d="M4 8h16M4 16h16"/>',
@@ -60,7 +58,7 @@ function header(productBase, onHub) {
         <span>${brand}</span>
       </a>
       <nav class="desktop-nav" aria-label="Main navigation">${links}</nav>
-      <a class="button small header-action" href="${careerPath}#roles">Find a role</a>
+      <a class="button small header-action" href="${careerPath}#roles">Browse roles</a>
       <button type="button" class="theme-toggle" data-theme-toggle aria-label="Dark mode" aria-pressed="false">
         <span class="moon">${icon("moon")}</span><span class="sun">${icon("sun")}</span>
       </button>
@@ -128,13 +126,13 @@ function page({ title, description, path, body, graph = [], onHub = false, previ
   <link rel="preload" href="${assets}/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin>
   <script>try{if(localStorage.getItem("api-site-theme")==="dark")document.documentElement.dataset.theme="dark"}catch{}</script>
   <link rel="stylesheet" href="${assets}/careers.css">
-  <noscript><style>[data-controls],[data-theme-toggle]{display:none!important}</style></noscript>
+  <noscript><style>[data-theme-toggle]{display:none!important}</style></noscript>
   <script src="${assets}/careers.js" defer></script>
   ${graph.length ? `<script type="application/ld+json">${jsonLd(graph)}</script>` : ""}
 </head>
 <body>
   ${header(productBase, onHub)}
-  <main id="main">${body}</main>
+  <main id="main" tabindex="-1">${body}</main>
   ${footer(productBase)}
 </body>
 </html>`;
@@ -166,7 +164,7 @@ function hubHero() {
         <p class="hero-lead">Work on questions that matter to athletes and coaches. Explore sports science and technology internships, or lead applied studies as a Research Associate.</p>
         <div class="hero-actions">
           <a class="button" href="#roles">Explore roles</a>
-          <a class="text-link inverse" href="${rolePath(researchAssociate)}">Research Associate</a>
+          <a class="text-link inverse" href="#methodology">How we work</a>
         </div>
       </div>
       <aside class="hero-note" aria-label="A question we study">
@@ -179,82 +177,35 @@ function hubHero() {
         <p>What changes before the result changes?</p>
       </aside>
     </div>
-  </section>
-  <div class="hero-facts">
-    <div class="wrap facts-inner">
-      <p><strong>${internshipCount}</strong> internship pathways</p>
-      <p><strong>${tracks.length}</strong> disciplines</p>
-      <a class="text-link" href="#methodology">How we apply Loop Engineering and RSI</a>
-    </div>
-  </div>`;
+  </section>`;
 }
 
-function card(role) {
-  const kind = roleKind(role);
-  const searchable = [
-    role.title, role.lead, role.category, role.keywords, ...role.tasks, ...role.skills,
-    "Loop Engineering Recursive Self Improvement RSI", role.method.loop, role.method.rsi,
-  ].join(" ");
+function roleEntry(role) {
+  const labels = roleLabels(role);
   return `
-  <article class="role-card" data-role data-kind="${kind}" data-search="${escapeHtml(searchable)}">
-    <a class="role-card-link" href="${rolePath(role)}">
-      ${kind === "research" ? '<p class="role-badge">Research role</p>' : ""}
-      <h4>${escapeHtml(role.title)}</h4>
+  <article class="role-entry" aria-labelledby="role-${role.slug}">
+    <header class="role-entry-header">${roleKind(role) === "research" ? '\n      <p class="eyebrow">Research role</p>' : ""}
+      <h4 id="role-${role.slug}">${escapeHtml(role.title)}</h4>
       <p>${escapeHtml(role.lead)}</p>
-    </a>
+    </header>${roleDescription(role, labels, true)}
+    <a class="text-link" href="${rolePath(role)}" aria-label="Open role page for ${escapeHtml(role.title)}">Role page</a>
   </article>`;
 }
 
-function directory() {
+function roleListings() {
   return `
-  <section class="directory wrap" id="roles" aria-labelledby="roles-title" data-directory>
-    <div class="directory-head">
-      <div>
-        <p class="eyebrow">The role directory</p>
-        <h2 id="roles-title">Find your role</h2>
-        <p>Compare responsibilities, experience and example projects across seven disciplines.</p>
+  <section class="role-listings wrap" id="roles" aria-labelledby="roles-title">
+    <header class="listings-head">
+      <h2 id="roles-title">Explore the roles</h2>
+      <p>Scroll through the job descriptions to see what you’d work on, the experience you’d bring, and a sample project for each role.</p>
+    </header>${tracks.map((track) => `
+    <section class="track" id="${track.key}" aria-labelledby="title-${track.key}">
+      <div class="track-intro">
+        <h3 id="title-${track.key}">${escapeHtml(track.name)}</h3>
+        <p>${escapeHtml(track.description)}</p>
       </div>
-      <div class="directory-fields" data-controls>
-        <div class="search-field">
-          <label for="role-search">Search roles</label>
-          <div class="input-wrap">
-            ${icon("search")}
-            <input type="search" id="role-search" placeholder="Try EEG, wearables or RSI" autocomplete="off" aria-controls="role-list">
-          </div>
-        </div>
-        <div class="search-field">
-          <label for="role-kind">Role type</label>
-          <select id="role-kind" aria-controls="role-list">
-            <option value="">All roles</option>
-            <option value="internship">Internships</option>
-            <option value="research">Research roles</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <div class="directory-controls" data-controls>
-      <fieldset class="filters">
-        <legend class="sr-only">Filter by discipline</legend>
-        <button type="button" data-track-filter="" aria-pressed="true">All disciplines</button>
-        ${tracks.map((track) => `<button type="button" data-track-filter="${track.key}" aria-pressed="false">${escapeHtml(track.name)}</button>`).join("")}
-      </fieldset>
-      <p class="result-count" role="status" data-count>${orderedRoles.length} roles</p>
-    </div>
-    <div id="role-list">
-      ${tracks.map((track) => `
-      <section class="track" id="${track.key}" data-track="${track.key}" aria-labelledby="title-${track.key}">
-        <div class="track-intro">
-          <h3 id="title-${track.key}">${escapeHtml(track.name)}</h3>
-          <p>${escapeHtml(track.description)}</p>
-        </div>
-        <div class="role-grid">${track.roles.map(card).join("")}</div>
-      </section>`).join("")}
-    </div>
-    <div class="no-results" data-empty hidden>
-      <h3>No matching roles</h3>
-      <p>Try a different search term or clear the role type and discipline filters.</p>
-      <button class="button" type="button" data-reset>Show all roles</button>
-    </div>
+      <div class="role-stack">${track.roles.map(roleEntry).join("")}</div>
+    </section>`).join("")}
   </section>`;
 }
 
@@ -319,7 +270,7 @@ export function renderHub({ preview = false } = {}) {
   const url = origin + careerPath;
   return page({
     title: hubTitle, description: hubDescription, path: careerPath, onHub: true, preview,
-    body: hubHero() + directory() + program(preview ? origin : "") + faq(),
+    body: hubHero() + roleListings() + program(preview ? origin : "") + faq(),
     graph: [
       brandOrganization(),
       {
@@ -327,9 +278,8 @@ export function renderHub({ preview = false } = {}) {
         publisher: { "@id": brandId }, inLanguage: "en",
         mainEntity: {
           "@type": "ItemList",
-          numberOfItems: orderedRoles.length,
-          itemListElement: orderedRoles.map((role, index) => ({
-            "@type": "ListItem", position: index + 1, name: role.title, url: origin + rolePath(role),
+          itemListElement: orderedRoles.map((role) => ({
+            "@type": "WebPage", name: role.title, url: origin + rolePath(role),
           })),
         },
       },
@@ -338,24 +288,46 @@ export function renderHub({ preview = false } = {}) {
   });
 }
 
-function roleList(heading, items) {
+function roleLabels(role) {
+  return roleKind(role) === "research"
+    ? { type: "Research role", about: "About the role", work: "What you’ll lead", fit: "Who this role is for" }
+    : { type: "Internship pathway", about: "About the internship", work: "What you could work on", fit: "Skills and interests" };
+}
+
+function roleList(heading, items, level) {
   return `<section class="role-section">
-    <h2>${heading}</h2>
+    <${level}>${heading}</${level}>
     <ul class="clean-list">${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
   </section>`;
 }
 
-function roleMethod(method) {
+function roleDescription(role, labels, inline = false) {
+  const level = inline ? "h5" : "h2";
+  const methodId = inline ? `${role.slug}-method` : "role-method";
   return `
-  <section class="role-method" id="role-method" aria-labelledby="role-method-title">
-    <p class="eyebrow">How you’ll improve the work</p>
-    <h2 id="role-method-title">Loop Engineering and Recursive Self Improvement</h2>
-    <dl class="method-steps">
-      <div><dt>Loop Engineering</dt><dd>${escapeHtml(method.loop)}</dd></div>
-      <div><dt>Recursive Self Improvement (RSI)</dt><dd>${escapeHtml(method.rsi)}</dd></div>
-    </dl>
-    <a class="text-link" href="${careerPath}#methodology">See how we apply RSI to athlete performance</a>
-  </section>`;
+  <div class="role-content">
+    <section class="role-section">
+      <${level}>${labels.about}</${level}>
+      <p>${escapeHtml(role.mission)}</p>
+    </section>
+    <div class="role-requirements">
+      ${roleList(labels.work, role.tasks, level)}
+      ${roleList(labels.fit, role.skills, level)}
+    </div>
+    <section class="role-method" id="${methodId}" aria-labelledby="${methodId}-title">
+      <p class="eyebrow">How you’ll improve the work</p>
+      <${level} id="${methodId}-title">Loop Engineering and Recursive Self Improvement</${level}>
+      <dl class="method-steps">
+        <div><dt>Loop Engineering</dt><dd>${escapeHtml(role.method.loop)}</dd></div>
+        <div><dt>Recursive Self Improvement (RSI)</dt><dd>${escapeHtml(role.method.rsi)}</dd></div>
+      </dl>${inline ? "" : `\n      <a class="text-link" href="${careerPath}#methodology">See how we apply RSI to athlete performance</a>`}
+    </section>
+    <section class="sample-project">
+      <p class="eyebrow">A practical example</p>
+      <${level}>Sample project</${level}>
+      <p>${escapeHtml(role.project)}</p>
+    </section>
+  </div>`;
 }
 
 function relatedRoles(role, track) {
@@ -387,9 +359,7 @@ export function renderRole(role, { preview = false } = {}) {
   const path = rolePath(role);
   const url = origin + path;
   const research = roleKind(role) === "research";
-  const labels = research
-    ? { type: "Research role", about: "About the role", work: "What you’ll lead", fit: "Who this role is for" }
-    : { type: "Internship pathway", about: "About the internship", work: "What you could work on", fit: "Skills and interests" };
+  const labels = roleLabels(role);
   return page({
     title: role.title, description: role.description, path, preview,
     body: `
@@ -410,21 +380,7 @@ export function renderRole(role, { preview = false } = {}) {
         <p>${escapeHtml(role.lead)}</p>
       </div>
     </section>
-    <div class="wrap role-layout">
-      <div class="role-content">
-        <section class="role-section">
-          <h2>${labels.about}</h2>
-          <p>${escapeHtml(role.mission)}</p>
-        </section>
-        ${roleList(labels.work, role.tasks)}
-        ${roleList(labels.fit, role.skills)}
-        ${roleMethod(role.method)}
-        <section class="sample-project">
-          <p class="eyebrow">A practical example</p>
-          <h2>Sample project</h2>
-          <p>${escapeHtml(role.project)}</p>
-        </section>
-      </div>
+    <div class="wrap role-layout">${roleDescription(role, labels)}
       <aside class="role-aside" aria-labelledby="pathway-title">
         <p class="eyebrow">${labels.type}</p>
         <h2 id="pathway-title">Application details</h2>

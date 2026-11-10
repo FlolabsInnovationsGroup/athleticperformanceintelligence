@@ -7,8 +7,6 @@ export const careerPath = "/careers";
 export const assets = "/career-assets";
 export const rolePath = (role) => `${careerPath}/${role.slug}`;
 export const roleKind = (role) => role.kind ?? "internship";
-export const researchAssociate = roles.find((role) => role.slug === "research-associate");
-export const internshipCount = roles.filter((role) => roleKind(role) === "internship").length;
 
 const disciplines = [
   {
@@ -58,7 +56,7 @@ export const trackFor = (role) => tracks.find((track) => track.name === role.cat
 export const questions = [
   {
     question: "What kinds of roles can I explore?",
-    answer: `Explore ${internshipCount} internships across ${tracks.length} disciplines, plus a Research Associate role for experienced researchers. The work spans sports science, neuroscience, AI, engineering, wearables, design, research, partnerships and operations.`,
+    answer: "The careers page covers internships in sports science, neuroscience, AI, engineering, wearables, design, research, partnerships and operations. Experienced researchers can also read about the Research Associate role.",
   },
   {
     question: "Who should consider the Research Associate role?",
@@ -78,6 +76,6 @@ export const questions = [
   },
   {
     question: "How do I apply?",
-    answer: "Choose a role to review its scope, experience and example project. Application instructions will appear on the role page when available.",
+    answer: "Scroll through the role descriptions to review the work, relevant experience and sample projects. Application instructions will appear on the relevant role page when available.",
   },
 ];
