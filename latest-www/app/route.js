@@ -9,7 +9,7 @@ function addCareersNavigation(html) {
   // The homepage export keeps its visible header and footer inside a JSON template.
   const withFallback = html.replace(
     "This page requires JavaScript to display.",
-    'This page requires JavaScript to display. <a href="/careers" style="color:#086d62;font-weight:700">Explore internships</a>.',
+    'This page requires JavaScript to display. <a href="/careers" style="color:#086d62;font-weight:700">Explore careers</a>.',
   );
   return withFallback.replace(bundleTemplate, (script, open, json, close) => {
     let template;

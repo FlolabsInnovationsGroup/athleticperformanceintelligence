@@ -6,6 +6,9 @@ export const origin = siteMeta.fallbackOrigin;
 export const careerPath = "/careers";
 export const assets = "/career-assets";
 export const rolePath = (role) => `${careerPath}/${role.slug}`;
+export const roleKind = (role) => role.kind ?? "internship";
+export const researchAssociate = roles.find((role) => role.slug === "research-associate");
+export const internshipCount = roles.filter((role) => roleKind(role) === "internship").length;
 
 const disciplines = [
   {
@@ -54,8 +57,12 @@ export const trackFor = (role) => tracks.find((track) => track.name === role.cat
 
 export const questions = [
   {
-    question: "What kinds of internships can I explore?",
-    answer: "Athletic Performance Intelligence has 36 internship pathways across seven disciplines. Explore roles in sports science, neuroscience, AI, data engineering, wearables, product design, research, partnerships and operations.",
+    question: "What kinds of roles can I explore?",
+    answer: `Explore ${internshipCount} internships across ${tracks.length} disciplines, plus a Research Associate role for experienced researchers. The work spans sports science, neuroscience, AI, engineering, wearables, design, research, partnerships and operations.`,
+  },
+  {
+    question: "Who should consider the Research Associate role?",
+    answer: "PhD holders, doctoral candidates, postdocs and experienced subject matter experts who can lead applied research. Relevant fields include sports science, physiology, biomechanics, neuroscience, statistics, machine learning and wearable sensing.",
   },
   {
     question: "Are the internships remote?",
@@ -70,7 +77,7 @@ export const questions = [
     answer: "Depending on the role, projects can use training logs, check-ins, sensor data or competition results. Early experiments can use synthetic or appropriately consented data. Each project should document who can access the data and what the evidence can support.",
   },
   {
-    question: "How do I apply for an internship?",
-    answer: "Choose a role to review its scope, skills and example project. Application instructions and placement details will appear on the relevant role page when they’re available.",
+    question: "How do I apply?",
+    answer: "Choose a role to review its scope, experience and example project. Application instructions will appear on the role page when available.",
   },
 ];

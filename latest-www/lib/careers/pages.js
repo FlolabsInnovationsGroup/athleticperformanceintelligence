@@ -1,10 +1,11 @@
 import {
-  assets, brand, careerPath, orderedRoles, origin, questions, rolePath, trackFor, tracks,
+  assets, brand, careerPath, internshipCount, orderedRoles, origin, questions,
+  researchAssociate, roleKind, rolePath, trackFor, tracks,
 } from "./catalog.js";
 
-const hubTitle = "Sports Science & Sports Technology Internships";
+const hubTitle = "Sports Science Careers & Sports Technology Internships";
 const hubDescription =
-  "Explore 36 internship pathways in sports science, neuroscience, AI, wearable engineering, design and more at Athletic Performance Intelligence.";
+  `Explore ${internshipCount} internships in sports science, AI, wearables and product, plus a Research Associate role for PhDs and experienced specialists.`;
 const shareImage = `${assets}/careers-share.jpg`;
 const brandId = `${origin}/#organization`;
 
@@ -33,7 +34,7 @@ function jsonLd(schema) {
 function breadcrumbs(path, label) {
   const items = [
     { name: brand, item: `${origin}/` },
-    { name: "Internships", item: origin + careerPath },
+    { name: "Careers", item: origin + careerPath },
   ];
   if (path !== careerPath) items.push({ name: label, item: origin + path });
   return {
@@ -47,8 +48,8 @@ function breadcrumbs(path, label) {
 function header(productBase, onHub) {
   const links = `
     <a href="${productBase}/#api">Platform</a>
-    <a href="${careerPath}"${onHub ? ' aria-current="page"' : ""}>Internships</a>
-    <a href="${careerPath}#program">Program</a>
+    <a href="${careerPath}"${onHub ? ' aria-current="page"' : ""}>Careers</a>
+    <a href="${careerPath}#methodology">Methodology</a>
     <a href="${careerPath}#questions">FAQ</a>`;
   return `
   <a class="skip" href="#main">Skip to content</a>
@@ -83,8 +84,8 @@ function footer(productBase) {
         <p>Understand what helps each athlete perform at their best.</p>
       </div>
       <nav aria-label="Footer navigation">
-        <a href="${careerPath}#roles">Browse internships</a>
-        <a href="${careerPath}#program">About the program</a>
+        <a href="${careerPath}#roles">Browse roles</a>
+        <a href="${careerPath}#methodology">Athlete performance methodology</a>
         <a href="${productBase}/#signature">Peak Performance Signature</a>
       </nav>
     </div>
@@ -117,12 +118,12 @@ function page({ title, description, path, body, graph = [], onHub = false, previ
   <meta property="og:image" content="${origin + shareImage}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Athletic Performance Intelligence internships over an aerial view of a stadium">
+  <meta property="og:image:alt" content="Athletic Performance Intelligence careers over an aerial view of a stadium">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${metadata.title}">
   <meta name="twitter:description" content="${metadata.description}">
   <meta name="twitter:image" content="${origin + shareImage}">
-  <meta name="twitter:image:alt" content="Athletic Performance Intelligence internships over an aerial view of a stadium">
+  <meta name="twitter:image:alt" content="Athletic Performance Intelligence careers over an aerial view of a stadium">
   <link rel="icon" href="/logo.svg" type="image/svg+xml">
   <link rel="preload" href="${assets}/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin>
   <script>try{if(localStorage.getItem("api-site-theme")==="dark")document.documentElement.dataset.theme="dark"}catch{}</script>
@@ -160,12 +161,12 @@ function hubHero() {
     <div class="hero-wash"></div>
     <div class="wrap hero-inner">
       <div class="hero-copy">
-        <p class="eyebrow on-image"><span></span>Sports science and technology internships</p>
+        <p class="eyebrow on-image"><span></span>Sports science and technology careers</p>
         <h1 id="hero-title">Build what helps <em>athletes perform.</em></h1>
-        <p class="hero-lead">Work on questions that matter to athletes and coaches. Explore internship pathways in sports science, AI, wearables and the tools teams use to understand performance.</p>
+        <p class="hero-lead">Work on questions that matter to athletes and coaches. Explore sports science and technology internships, or lead applied studies as a Research Associate.</p>
         <div class="hero-actions">
-          <a class="button" href="#roles">Explore internships</a>
-          <a class="text-link inverse" href="#program">Get to know the program</a>
+          <a class="button" href="#roles">Explore roles</a>
+          <a class="text-link inverse" href="${rolePath(researchAssociate)}">Research Associate</a>
         </div>
       </div>
       <aside class="hero-note" aria-label="A question we study">
@@ -181,18 +182,23 @@ function hubHero() {
   </section>
   <div class="hero-facts">
     <div class="wrap facts-inner">
-      <p><strong>${orderedRoles.length}</strong> internship pathways</p>
+      <p><strong>${internshipCount}</strong> internship pathways</p>
       <p><strong>${tracks.length}</strong> disciplines</p>
-      <a class="text-link" href="#program">See how the work connects</a>
+      <a class="text-link" href="#methodology">How we apply Loop Engineering and RSI</a>
     </div>
   </div>`;
 }
 
 function card(role) {
-  const searchable = [role.title, role.lead, role.category, role.keywords, ...role.tasks, ...role.skills].join(" ");
+  const kind = roleKind(role);
+  const searchable = [
+    role.title, role.lead, role.category, role.keywords, ...role.tasks, ...role.skills,
+    "Loop Engineering Recursive Self Improvement RSI", role.method.loop, role.method.rsi,
+  ].join(" ");
   return `
-  <article class="role-card" data-role data-search="${escapeHtml(searchable)}">
+  <article class="role-card" data-role data-kind="${kind}" data-search="${escapeHtml(searchable)}">
     <a class="role-card-link" href="${rolePath(role)}">
+      ${kind === "research" ? '<p class="role-badge">Research role</p>' : ""}
       <h4>${escapeHtml(role.title)}</h4>
       <p>${escapeHtml(role.lead)}</p>
     </a>
@@ -205,14 +211,24 @@ function directory() {
     <div class="directory-head">
       <div>
         <p class="eyebrow">The role directory</p>
-        <h2 id="roles-title">Find your internship</h2>
-        <p>Compare responsibilities, skills and example projects across all seven disciplines.</p>
+        <h2 id="roles-title">Find your role</h2>
+        <p>Compare responsibilities, experience and example projects across seven disciplines.</p>
       </div>
-      <div class="search-field" data-controls>
-        <label for="role-search">Search internships</label>
-        <div class="input-wrap">
-          ${icon("search")}
-          <input type="search" id="role-search" placeholder="Try EEG, wearables or Python" autocomplete="off" aria-controls="role-list">
+      <div class="directory-fields" data-controls>
+        <div class="search-field">
+          <label for="role-search">Search roles</label>
+          <div class="input-wrap">
+            ${icon("search")}
+            <input type="search" id="role-search" placeholder="Try EEG, wearables or RSI" autocomplete="off" aria-controls="role-list">
+          </div>
+        </div>
+        <div class="search-field">
+          <label for="role-kind">Role type</label>
+          <select id="role-kind" aria-controls="role-list">
+            <option value="">All roles</option>
+            <option value="internship">Internships</option>
+            <option value="research">Research roles</option>
+          </select>
         </div>
       </div>
     </div>
@@ -222,7 +238,7 @@ function directory() {
         <button type="button" data-track-filter="" aria-pressed="true">All disciplines</button>
         ${tracks.map((track) => `<button type="button" data-track-filter="${track.key}" aria-pressed="false">${escapeHtml(track.name)}</button>`).join("")}
       </fieldset>
-      <p class="result-count" role="status" data-count>${orderedRoles.length} internship pathways</p>
+      <p class="result-count" role="status" data-count>${orderedRoles.length} roles</p>
     </div>
     <div id="role-list">
       ${tracks.map((track) => `
@@ -235,17 +251,17 @@ function directory() {
       </section>`).join("")}
     </div>
     <div class="no-results" data-empty hidden>
-      <h3>No matching internships</h3>
-      <p>Try a different search term or clear the discipline filter.</p>
-      <button class="button" type="button" data-reset>Show all internships</button>
+      <h3>No matching roles</h3>
+      <p>Try a different search term or clear the role type and discipline filters.</p>
+      <button class="button" type="button" data-reset>Show all roles</button>
     </div>
   </section>`;
 }
 
 function program(productBase) {
   return `
-  <section class="program" id="program" aria-labelledby="program-title">
-    <div class="wrap program-inner">
+  <div class="program">
+    <section class="wrap program-inner" id="program" aria-labelledby="program-title">
       <div class="program-intro">
         <p class="eyebrow">How we work</p>
         <h2 id="program-title">Start with the athlete’s question</h2>
@@ -261,8 +277,25 @@ function program(productBase) {
           <div><dt>Performance</dt><dd>Training load, sport-specific output and competition results.</dd></div>
         </dl>
       </div>
-    </div>
-  </section>`;
+    </section>
+    <section class="wrap method-overview" id="methodology" aria-labelledby="methodology-title">
+      <div>
+        <p class="eyebrow">Athlete performance methodology</p>
+        <h2 id="methodology-title">How we use Loop Engineering and RSI</h2>
+        <p>We use these methods to help athletes improve performance. One study might test whether changing recovery timing helps an athlete feel more ready for their next session. Every role applies the same discipline to its own work.</p>
+      </div>
+      <dl class="method-steps">
+        <div>
+          <dt>Loop Engineering</dt>
+          <dd>Agree on the outcome and the athlete’s baseline with performance staff. Test a defined change under comparable conditions, then review the results and any other factors that could explain them.</dd>
+        </div>
+        <div>
+          <dt>Recursive Self Improvement (RSI)</dt>
+          <dd>Use each result to improve how the next test is designed, how data is collected, or how a model interprets it. Check the revision against fresh observations. The athlete and staff review the evidence before changing training or recovery.</dd>
+        </div>
+      </dl>
+    </section>
+  </div>`;
 }
 
 function faq() {
@@ -312,6 +345,19 @@ function roleList(heading, items) {
   </section>`;
 }
 
+function roleMethod(method) {
+  return `
+  <section class="role-method" id="role-method" aria-labelledby="role-method-title">
+    <p class="eyebrow">How you’ll improve the work</p>
+    <h2 id="role-method-title">Loop Engineering and Recursive Self Improvement</h2>
+    <dl class="method-steps">
+      <div><dt>Loop Engineering</dt><dd>${escapeHtml(method.loop)}</dd></div>
+      <div><dt>Recursive Self Improvement (RSI)</dt><dd>${escapeHtml(method.rsi)}</dd></div>
+    </dl>
+    <a class="text-link" href="${careerPath}#methodology">See how we apply RSI to athlete performance</a>
+  </section>`;
+}
+
 function relatedRoles(role, track) {
   const ownTrack = track.roles.filter((candidate) => candidate !== role);
   const nearby = track.key === "performance-science" ? "research-governance" : "performance-science";
@@ -321,13 +367,13 @@ function relatedRoles(role, track) {
   <section class="related" aria-labelledby="related-title">
     <div class="wrap">
       <div class="related-head">
-        <h2 id="related-title">Explore related internships</h2>
-        <a class="text-link" href="${careerPath}#roles">View all internships</a>
+        <h2 id="related-title">Explore related roles</h2>
+        <a class="text-link" href="${careerPath}#roles">View all roles</a>
       </div>
       <div class="related-grid">
         ${related.map((candidate) => `
         <a href="${rolePath(candidate)}">
-          <p class="eyebrow">${escapeHtml(candidate.category)}</p>
+          <p class="eyebrow">${roleKind(candidate) === "research" ? "Research role" : escapeHtml(candidate.category)}</p>
           <h3>${escapeHtml(candidate.title)}</h3>
           <p>${escapeHtml(candidate.lead)}</p>
         </a>`).join("")}
@@ -340,6 +386,10 @@ export function renderRole(role, { preview = false } = {}) {
   const track = trackFor(role);
   const path = rolePath(role);
   const url = origin + path;
+  const research = roleKind(role) === "research";
+  const labels = research
+    ? { type: "Research role", about: "About the role", work: "What you’ll lead", fit: "Who this role is for" }
+    : { type: "Internship pathway", about: "About the internship", work: "What you could work on", fit: "Skills and interests" };
   return page({
     title: role.title, description: role.description, path, preview,
     body: `
@@ -347,7 +397,7 @@ export function renderRole(role, { preview = false } = {}) {
       <nav class="crumbs" aria-label="Breadcrumb">
         <ol>
           <li><a href="${preview ? origin : ""}/">Home</a></li>
-          <li><a href="${careerPath}">Internships</a></li>
+          <li><a href="${careerPath}">Careers</a></li>
           <li aria-current="page">${escapeHtml(role.title)}</li>
         </ol>
       </nav>
@@ -355,7 +405,7 @@ export function renderRole(role, { preview = false } = {}) {
     <section class="role-hero" aria-labelledby="role-title">
       ${fieldLines()}
       <div class="wrap role-hero-inner">
-        <p class="eyebrow on-image"><span></span>${escapeHtml(track.name)}</p>
+        <p class="eyebrow on-image"><span></span>${research ? labels.type : escapeHtml(track.name)}</p>
         <h1 id="role-title">${escapeHtml(role.title)}</h1>
         <p>${escapeHtml(role.lead)}</p>
       </div>
@@ -363,11 +413,12 @@ export function renderRole(role, { preview = false } = {}) {
     <div class="wrap role-layout">
       <div class="role-content">
         <section class="role-section">
-          <h2>About the internship</h2>
+          <h2>${labels.about}</h2>
           <p>${escapeHtml(role.mission)}</p>
         </section>
-        ${roleList("What you could work on", role.tasks)}
-        ${roleList("Skills and interests", role.skills)}
+        ${roleList(labels.work, role.tasks)}
+        ${roleList(labels.fit, role.skills)}
+        ${roleMethod(role.method)}
         <section class="sample-project">
           <p class="eyebrow">A practical example</p>
           <h2>Sample project</h2>
@@ -375,14 +426,15 @@ export function renderRole(role, { preview = false } = {}) {
         </section>
       </div>
       <aside class="role-aside" aria-labelledby="pathway-title">
-        <p class="eyebrow">Internship pathway</p>
+        <p class="eyebrow">${labels.type}</p>
         <h2 id="pathway-title">Application details</h2>
-        <p>Application instructions and placement details will appear here when available.</p>
+        <p>Application instructions will appear here when available.</p>
+        <a class="text-link" href="#role-method">How this role uses RSI</a>
         <a class="text-link" href="${careerPath}#questions">Applicant questions</a>
         <a class="aside-discipline" href="${careerPath}#${track.key}">More in ${escapeHtml(track.name)}</a>
       </aside>
     </div>
-    ${relatedRoles(role, track)}`,
+    ${research ? "" : relatedRoles(role, track)}`,
     graph: [
       brandOrganization(),
       {
@@ -397,15 +449,15 @@ export function renderRole(role, { preview = false } = {}) {
 
 export function renderNotFound() {
   return page({
-    title: "Internship page not found",
-    description: "Return to the Athletic Performance Intelligence internship directory.",
+    title: "Role not found",
+    description: "Return to the Athletic Performance Intelligence careers directory.",
     path: careerPath,
     noindex: true,
     body: `<section class="wrap not-found">
-      <p class="eyebrow">Internships</p>
+      <p class="eyebrow">Careers</p>
       <h1>We couldn’t find that role.</h1>
-      <p>Browse the directory to find an internship that fits your interests.</p>
-      <a class="button" href="${careerPath}#roles">Explore internships</a>
+      <p>Browse the directory to find a role that fits your interests.</p>
+      <a class="button" href="${careerPath}#roles">Explore roles</a>
     </section>`,
   });
 }
