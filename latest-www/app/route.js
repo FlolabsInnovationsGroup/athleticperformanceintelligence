@@ -3,13 +3,13 @@ import { join } from "path";
 import { buildShareMetaTags, siteMeta } from "../lib/site-meta.js";
 
 const bundleTemplate = /(<script type="__bundler\/template">\s*)("[\s\S]*?")(\s*<\/script>)/;
-const careerLink = '<a href="/careers" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">Careers</a>';
+const careerLink = '<a href="/learning-opportunities" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">Internships &amp; Learning</a>';
 
 function addCareersNavigation(html) {
   // The homepage export keeps its visible header and footer inside a JSON template.
   const withFallback = html.replace(
     "This page requires JavaScript to display.",
-    'This page requires JavaScript to display. <a href="/careers" style="color:#086d62;font-weight:700">Explore careers</a>.',
+    'This page requires JavaScript to display. <a href="/learning-opportunities" style="color:#086d62;font-weight:700">Explore learning opportunities</a>.',
   );
   return withFallback.replace(bundleTemplate, (script, open, json, close) => {
     let template;
