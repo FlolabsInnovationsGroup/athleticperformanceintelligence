@@ -1,5 +1,4 @@
 import { orderedRoles } from "../../../lib/careers/catalog.js";
-import { htmlResponse, renderNotFound, renderRole } from "../../../lib/careers/pages.js";
 
 export const dynamic = "force-static";
 
@@ -9,6 +8,9 @@ export function generateStaticParams() {
 
 export async function GET(_request, { params }) {
   const { slug } = await params;
-  const role = orderedRoles.find((candidate) => candidate.slug === slug);
-  return role ? htmlResponse(renderRole(role)) : htmlResponse(renderNotFound(), 404);
+  const found = orderedRoles.some((role) => role.slug === slug);
+  return found ? new Response(null, {
+    status: 308,
+    headers: { Location: `/learning-opportunities/${slug}` },
+  }) : new Response("Opportunity not found", { status: 404 });
 }
