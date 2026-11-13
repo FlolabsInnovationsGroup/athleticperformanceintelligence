@@ -1,0 +1,304 @@
+@font-face {
+  font-family: "Schibsted Grotesk";
+  src: url("/career-assets/schibsted-grotesk.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+}
+
+:root {
+  --brand: #31d2c1;
+  --ink: #13303c;
+  --muted: #4c6572;
+  --accent: #086d62;
+  --paper: #fff;
+  --surface: #f2f8f7;
+  --line: #d8e5e5;
+  --navy: #0d2430;
+  --focus: #08786c;
+  --side: clamp(20px, 4vw, 40px);
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  --ink: #f4fafa;
+  --muted: #bbcbd2;
+  --accent: #6ae9dc;
+  --paper: #0b1a25;
+  --surface: #122734;
+  --line: #2d4652;
+  --focus: #63efdf;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-padding-top: 90px; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 16px/1.6 "Schibsted Grotesk", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; }
+button { color: inherit; font: inherit; }
+a { color: inherit; text-decoration: none; }
+button, summary { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 5px; }
+::selection { background: var(--brand); color: var(--navy); }
+h1, h2, h3, h4, h5, p { margin: 0; }
+h1, h2, h3, h4, h5 { text-wrap: balance; overflow-wrap: break-word; }
+p { text-wrap: pretty; }
+h2 { font-size: clamp(2.05rem, 4.4vw, 4rem); font-weight: 700; line-height: 1.02; letter-spacing: -.055em; }
+h3 { font-size: 1.42rem; line-height: 1.16; letter-spacing: -.03em; }
+.wrap { width: min(100%, 1280px); margin-inline: auto; padding-inline: var(--side); }
+.skip { position: fixed; z-index: 5; top: 12px; left: 12px; padding: 9px 16px; background: var(--brand); color: var(--navy); transform: translateY(-180%); }
+.skip:focus { transform: none; }
+
+.masthead {
+  position: sticky;
+  z-index: 4;
+  top: 0;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+}
+.masthead-inner { min-height: 70px; display: flex; align-items: center; gap: 18px; }
+.wordmark { min-width: 0; display: inline-flex; align-items: center; gap: 10px; font-size: .98rem; font-weight: 750; letter-spacing: -.025em; line-height: 1.2; }
+.wordmark img { flex: none; }
+.desktop-nav { display: flex; align-items: center; gap: clamp(14px, 2vw, 29px); margin-left: auto; }
+.desktop-nav a, .mobile-nav nav a { color: var(--muted); font-size: .9rem; }
+.desktop-nav a { white-space: nowrap; }
+.desktop-nav a:hover, .desktop-nav a[aria-current], .mobile-nav nav a:hover { color: var(--accent); }
+.desktop-nav a[aria-current] { font-weight: 700; }
+.theme-toggle, .mobile-nav summary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 7px;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: .9rem;
+  white-space: nowrap;
+}
+.theme-toggle:hover, .theme-toggle[aria-pressed="true"], .mobile-nav summary:hover {
+  color: var(--accent);
+}
+.mobile-nav { display: none; }
+.mobile-nav summary { list-style: none; }
+.mobile-nav summary::-webkit-details-marker { display: none; }
+.mobile-nav nav {
+  position: absolute;
+  inset: 100% 0 auto;
+  display: grid;
+  padding: 10px var(--side) 18px;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+}
+.mobile-nav nav a { padding: 11px 3px; }
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  color: var(--accent);
+  font-size: .92rem;
+  font-weight: 670;
+}
+.text-link:hover { color: var(--ink); }
+
+.hero { border-bottom: 1px solid var(--line); }
+.hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr);
+  align-items: center;
+  gap: clamp(28px, 5vw, 72px);
+  padding-block: clamp(38px, 5.7vw, 76px);
+}
+.hero h1 {
+  max-width: 15ch;
+  font-size: clamp(2.85rem, 5.25vw, 4.65rem);
+  font-weight: 730;
+  line-height: 1.03;
+  letter-spacing: -.058em;
+  text-wrap: initial;
+}
+.hero-lead {
+  max-width: 54ch;
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.4vw, 1.14rem);
+  line-height: 1.55;
+}
+.hero-lead + .hero-lead { margin-top: 12px; }
+.hero-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: 50% 55%;
+}
+.footer :focus-visible { outline-color: #87f7eb; }
+
+.role-listings { padding-block: clamp(42px, 5.7vw, 76px); }
+.listings-head { max-width: 65ch; margin-bottom: clamp(23px, 3.3vw, 42px); }
+.track {
+  display: grid;
+  grid-template-columns: minmax(170px, .28fr) minmax(0, 1fr);
+  gap: clamp(22px, 4.6vw, 62px);
+  padding-block: clamp(30px, 5vw, 60px);
+  border-top: 1px solid var(--line);
+}
+.track:last-child { border-bottom: 1px solid var(--line); }
+.track-intro { position: sticky; top: 98px; align-self: start; }
+.track-intro h3 { font-weight: 740; }
+.track-intro p { max-width: 26ch; margin-top: 9px; color: var(--muted); font-size: .92rem; }
+.role-stack { min-width: 0; }
+.role-entry + .role-entry {
+  margin-top: clamp(35px, 5vw, 64px);
+  padding-top: clamp(35px, 5vw, 64px);
+  border-top: 1px solid var(--line);
+}
+.role-entry-header { margin-bottom: 23px; }
+.role-entry-header h4 { font-size: clamp(1.65rem, 3.6vw, 2.75rem); font-weight: 750; line-height: 1.09; letter-spacing: -.045em; }
+.role-entry-header a:hover { color: var(--accent); }
+.role-entry-header p { max-width: 65ch; margin-top: 10px; color: var(--muted); font-size: 1.04rem; }
+.role-entry .role-requirements { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 24px; }
+.role-entry .role-section, .role-entry .role-method { margin-bottom: 23px; }
+.role-entry h5 { margin-bottom: 10px; font-size: clamp(1.08rem, 1.65vw, 1.3rem); font-weight: 740; line-height: 1.25; letter-spacing: -.018em; }
+
+.program { padding-block: clamp(49px, 7vw, 84px); background: var(--surface); }
+.program h2 { max-width: 24ch; font-size: clamp(1.9rem, 3.6vw, 3.35rem); }
+.program-intro > p, .method-overview > p {
+  max-width: 67ch;
+  margin-top: 15px;
+  color: var(--muted);
+}
+.program-intro .text-link { margin-top: 5px; }
+.method-overview { margin-top: clamp(38px, 5.5vw, 68px); }
+.method-steps { margin: 16px 0 0; }
+.method-steps > div { padding: 13px 0; border-top: 1px solid var(--line); }
+.method-steps > div:last-child { padding-bottom: 0; }
+.method-steps dt { color: var(--ink); font-weight: 710; line-height: 1.35; }
+.method-steps dd { max-width: 70ch; margin: 6px 0 0; color: var(--muted); }
+.method-overview .method-steps { max-width: 72ch; }
+.faq {
+  display: grid;
+  grid-template-columns: minmax(0, .62fr) minmax(0, 1.38fr);
+  gap: clamp(24px, 6vw, 80px);
+  padding-block: clamp(49px, 7vw, 88px);
+}
+.faq h2 { max-width: 13ch; }
+.faq-list { border-top: 1px solid var(--line); }
+.faq-list section { padding: 18px 0; border-bottom: 1px solid var(--line); }
+.faq-list h3 { font-size: 1.08rem; font-weight: 720; line-height: 1.35; letter-spacing: -.018em; }
+.faq-list p { max-width: 66ch; margin-top: 6px; color: var(--muted); }
+
+.crumbs ol { display: flex; flex-wrap: wrap; gap: 7px 15px; margin: 0; padding: 15px 0; list-style: none; color: var(--muted); font-size: .84rem; line-height: 1.35; }
+.crumbs a { color: var(--accent); }
+.crumbs a:hover { color: var(--ink); }
+.role-hero { border-block: 1px solid var(--line); background: var(--surface); }
+.role-hero-inner { padding-block: clamp(37px, 5.7vw, 76px); }
+.role-hero h1 {
+  max-width: 20ch;
+  font-size: clamp(2.2rem, 5.1vw, 4.5rem);
+  line-height: 1.06;
+  font-weight: 730;
+  letter-spacing: -.055em;
+  text-wrap: pretty;
+}
+.role-hero p { max-width: 64ch; margin-top: 17px; color: var(--muted); font-size: clamp(1.03rem, 1.7vw, 1.2rem); }
+.role-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(215px, 285px); gap: clamp(30px, 7vw, 108px); align-items: start; padding-block: clamp(42px, 6.3vw, 83px); }
+.role-content { min-width: 0; }
+.role-section { margin-bottom: 27px; }
+.role-section h2, .sample-project h2, .role-method h2 { margin-bottom: 12px; font-size: clamp(1.55rem, 3.1vw, 2.35rem); line-height: 1.12; letter-spacing: -.04em; }
+.role-section p, .sample-project p { max-width: 66ch; color: var(--muted); }
+.clean-list { margin: 0; padding: 0; list-style: none; }
+.clean-list li { padding: 8px 0; border-top: 1px solid var(--line); color: var(--muted); }
+.clean-list li:last-child { padding-bottom: 0; }
+.role-method, .sample-project {
+  padding-top: 17px;
+  border-top: 1px solid var(--line);
+}
+.role-method { margin-bottom: 26px; }
+.role-method .method-steps > div:first-child { padding-top: 0; border-top: 0; }
+.role-method .text-link { margin-top: 6px; }
+.role-aside { position: sticky; top: 103px; padding-top: 17px; border-top: 1px solid var(--line); }
+.role-aside h2 { font-size: 1.5rem; line-height: 1.15; letter-spacing: -.035em; }
+.role-aside p { margin: 8px 0 7px; color: var(--muted); font-size: .91rem; }
+.role-aside .text-link { display: flex; width: fit-content; min-height: 42px; }
+.related { padding-block: clamp(39px, 6vw, 65px); background: var(--surface); }
+.related-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 25px;
+  margin-bottom: 11px;
+}
+.related-head h2 { font-size: clamp(1.7rem, 3.8vw, 2.8rem); }
+.related-list { margin: 0; padding: 0; list-style: none; }
+.related-list li { border-top: 1px solid var(--line); }
+.related-list a { padding-block: 9px; }
+.not-found { min-height: 360px; padding-block: 70px; }
+.not-found h1 { margin-bottom: 10px; font-size: clamp(2.1rem, 5.5vw, 4.2rem); line-height: 1.1; letter-spacing: -.055em; }
+
+.footer { padding-block: 37px; background: #0d2430; color: #f0faf8; }
+.footer-inner { display: flex; justify-content: space-between; align-items: flex-start; gap: 21px 40px; }
+.footer nav { display: flex; flex-wrap: wrap; gap: 10px 22px; padding-top: 7px; }
+.footer nav a { color: #e5f3f2; font-size: .86rem; }
+.footer nav a:hover { color: var(--brand); }
+
+@media (max-width: 920px) {
+  .desktop-nav { display: none; }
+  .mobile-nav { display: block; }
+  .masthead .wordmark { margin-right: auto; }
+  .masthead-inner { gap: 10px; }
+}
+@media (max-width: 760px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero h1 { font-size: clamp(2.3rem, 8.8vw, 3.8rem); }
+  .hero-image { aspect-ratio: 16 / 9; }
+}
+@media (max-width: 690px) {
+  html { scroll-padding-top: 80px; }
+  .masthead-inner { min-height: 64px; }
+  .masthead .wordmark { font-size: .9rem; }
+  .track, .faq, .role-layout { grid-template-columns: 1fr; }
+  .track { gap: 24px; }
+  .track-intro, .role-aside { position: static; }
+  .track-intro p { max-width: 100%; margin-top: 5px; }
+  .role-entry .role-requirements { grid-template-columns: 1fr; gap: 0; }
+  .role-layout { gap: 27px; }
+  .footer-inner { flex-direction: column; }
+}
+@media (max-width: 450px) {
+  .masthead-inner { padding-inline: 15px; gap: 5px; }
+  .masthead .wordmark { gap: 6px; }
+  .masthead .wordmark img { width: 32px; height: 32px; }
+  .theme-toggle, .mobile-nav summary { padding-inline: 5px; font-size: .81rem; }
+  .hero-lead { margin-top: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+}
+
+/* Learning-first journey on the opportunities hub */
+.hero-links { display:flex; flex-wrap:wrap; gap:8px 24px; margin-top:20px; }
+.hero-links .text-link { min-height:44px; }
+.learning-journey { padding-block:clamp(48px,7vw,88px); }
+.eyebrow { color:var(--accent); font-size:.88rem; font-weight:700; margin-bottom:13px; }
+.journey-intro { max-width:760px; }
+.journey-intro p:not(.eyebrow) { max-width:66ch; color:var(--muted); margin-top:17px; }
+.journey-steps { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 46px; margin-top:clamp(24px,4vw,46px); }
+.journey-steps section { padding:24px 0; border-top:1px solid var(--line); }
+.journey-steps h3 { font-size:1.2rem; margin-bottom:8px; }
+.journey-steps p { color:var(--muted); max-width:56ch; }
+.participation-note { margin-top:25px; padding:26px 28px; background:var(--surface); border-left:3px solid var(--accent); }
+.participation-note h3 { margin-bottom:10px; }
+.participation-note p { max-width:73ch; color:var(--muted); }
+.participation-note .text-link { margin-top:10px; }
+.listings-description { color:var(--muted); max-width:75ch; margin-top:16px; }
+.role-hero .role-program-context { font-size:.95rem; max-width:68ch; margin-top:12px; }
+@media(max-width:690px) { .journey-steps {grid-template-columns:1fr;} .participation-note {padding:21px;} }

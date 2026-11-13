@@ -1,0 +1,929 @@
+[
+  {
+    "title": "Research Associate",
+    "category": "Research & Governance",
+    "slug": "research-associate",
+    "kind": "research",
+    "lead": "Lead studies with coaches and sports scientists on how individual athletes respond to training and recovery.",
+    "mission": "Lead studies that connect training, recovery, sleep, cognition and movement with how an individual athlete performs. Work with coaches, sports scientists and engineers to turn a practical question into a study they can run, interpret and reproduce. Bring findings back to the people who can use them.",
+    "tasks": [
+      "Design studies that follow athletes over time or compare each athlete with their own history. Agree on the outcome and analysis plan with performance staff before collecting evidence.",
+      "Evaluate data quality across wearables, training logs, athlete reports and competition results. Document missing data, uncertainty and plausible alternative explanations.",
+      "Work with engineers to test changes to performance models and research tools on unseen data. Define what counts as an improvement and what would trigger a rollback.",
+      "Lead reviews across disciplines. Document protocols, code and findings so another researcher can reproduce the work where permissions allow."
+    ],
+    "skills": [
+      "PhD holders, doctoral candidates, postdoctoral researchers, and experienced subject matter experts with a record of leading or delivering applied research.",
+      "Relevant expertise in sports science, exercise physiology, biomechanics, neuroscience, biostatistics, machine learning, wearable sensing, or a related field.",
+      "Evidence of taking a research question through study design, analysis and review. Examples include published studies, reproducible code, validated prototypes or applied work with sports teams.",
+      "Ability to explain uncertainty to coaches and athletes, collaborate across disciplines, and document decisions clearly in a distributed team."
+    ],
+    "project": "Design a study of whether a change in recovery timing is associated with better readiness for the next session. Agree on the outcome with the athlete and staff, compare it with the athlete’s own baseline, and document what the evidence supports before designing the next study.",
+    "keywords": "research associate athlete performance research PhD doctoral candidate postdoc experienced researcher subject matter expert sports science experimental design reproducible science human performance",
+    "description": "Lead athlete performance research as a Research Associate. For PhDs, doctoral candidates, postdocs and experienced subject matter experts.",
+    "method": {
+      "loop": "Work with the athlete and staff to choose an outcome, agree on a comparison, and run a bounded study. Review the result against the athlete’s own history and record uncertainty and other factors that may explain the change.",
+      "rsi": "Use the evidence to improve the next study protocol, the way signals are collected, or the model interpreting them. Recheck each revision on later observations. The athlete and qualified staff review the evidence before deciding whether to change training or recovery."
+    }
+  },
+  {
+    "title": "Applied AI & Athlete Intelligence Intern",
+    "category": "AI & Data",
+    "slug": "applied-ai-and-athlete-intelligence-intern",
+    "lead": "Build and test AI assistants that answer questions about training and recovery using athlete records.",
+    "mission": "Create grounded AI experiences that connect athlete check-ins, training load, sleep, recovery and coaching context. Explore how assistants can summarize evidence, expose uncertainty and support conversations without substituting for qualified staff.",
+    "tasks": [
+      "Prototype retrieval and agent workflows for questions about training and recovery",
+      "Evaluate hallucination, uncertainty and source traceability in athlete-facing answers",
+      "Compare frontier and open-source models on privacy, response quality and cost",
+      "Design escalation paths when a question should go to qualified sports or medical staff"
+    ],
+    "skills": [
+      "Python and an interest in LLM applications",
+      "Careful experimental thinking and evaluation skills",
+      "Awareness of privacy and limits of automated coaching"
+    ],
+    "project": "A coach asks why a player’s perceived exertion has increased. Build a grounded assistant that brings together their recent load, sleep and session notes with clear uncertainty.",
+    "keywords": "applied artificial intelligence internship, sports AI, multi-agent systems",
+    "description": "Prototype an AI assistant for athlete performance and test whether its answers about training, sleep and recovery are grounded in the data.",
+    "method": {
+      "loop": "Run the same coach questions against successive assistant versions. Record source accuracy, handling of uncertainty, and appropriate escalation.",
+      "rsi": "Turn unsupported answers into new evaluation cases. Use those cases to refine retrieval and prompts, then retest on questions the system has never seen."
+    }
+  },
+  {
+    "title": "Backend Software Engineer Intern (Athlete Data)",
+    "category": "AI & Data",
+    "slug": "backend-software-engineer-intern-athlete-data",
+    "lead": "Build APIs for workout and check-in records, and test how data moves from wearables into the platform.",
+    "mission": "Develop backend services for athlete profiles, role-based access, consent-aware ingestion, event timelines and evidence-linked analytics. Build testable APIs that preserve data provenance.",
+    "tasks": [
+      "Build well-tested APIs for workout and self-report records",
+      "Implement data validation, authorization and audit-ready event handling",
+      "Optimize background ingestion and error recovery for wearable streams",
+      "Document interfaces for frontend and mobile developers"
+    ],
+    "skills": [
+      "Programming fundamentals in Python, Java or TypeScript",
+      "REST APIs, databases and version control basics",
+      "Awareness of privacy, security and data lifecycle design"
+    ],
+    "project": "Implement a mock athlete timeline API with role-based authorization and deterministic integration tests.",
+    "keywords": "backend developer internship, sport data APIs, the athlete intelligence platform integration",
+    "description": "Build and test athlete data APIs, validate wearable records and manage access to training and self-report data.",
+    "method": {
+      "loop": "Replay delayed, duplicated and out-of-order events against a test athlete timeline. Check what reaches the dashboard and what the access rules allow.",
+      "rsi": "Use failures to improve validation, retry logic and the test fixtures themselves. Recheck data integrity and permissions before releasing a change."
+    }
+  },
+  {
+    "title": "Computer Vision & Sports Biomechanics Intern",
+    "category": "AI & Data",
+    "slug": "computer-vision-and-sports-biomechanics-intern",
+    "lead": "Test what pose estimation can measure in training video and how camera placement affects the result.",
+    "mission": "Prototype camera-based movement analysis that complements wearables and coach observation. Evaluate what works across different lighting, angles, sports and body types before making performance claims.",
+    "tasks": [
+      "Build and compare pose-estimation pipelines on consented training footage",
+      "Quantify errors caused by occlusion, camera placement and sport-specific movement",
+      "Create annotated movement visualizations for researcher review",
+      "Document consent, retention and bias considerations for video data"
+    ],
+    "skills": [
+      "Python and computer vision fundamentals",
+      "Experience with OpenCV or pose estimation is helpful",
+      "Strong respect for participant consent and uncertainty"
+    ],
+    "project": "Test whether a single-camera pose model can reliably describe change-of-direction movement across field and indoor environments.",
+    "keywords": "computer vision internship, pose estimation, sports biomechanics",
+    "description": "Compare pose estimation methods for sports biomechanics and measure errors caused by camera angle, occlusion and movement.",
+    "method": {
+      "loop": "Compare pose estimates with annotated movement across camera angles and lighting conditions. Record where joints are lost and how much timing differs.",
+      "rsi": "Use error patterns to improve the capture guidance and validation set. Check any model change on footage from a different session before adopting it."
+    }
+  },
+  {
+    "title": "Machine Learning Intern (Athlete Performance Modeling)",
+    "category": "AI & Data",
+    "slug": "machine-learning-intern-athlete-performance-modeling",
+    "lead": "Model how an athlete responds to training using their own history as a baseline.",
+    "mission": "Explore longitudinal modeling of athlete load, sleep, readiness and performance outcomes using consented, appropriately governed datasets.",
+    "tasks": [
+      "Create reproducible preprocessing pipelines with missingness checks",
+      "Evaluate personalized baselines rather than relying only on population averages",
+      "Design time-aware splits that avoid leakage and inflated accuracy",
+      "Interpret model errors and fairness across sports or subgroups"
+    ],
+    "skills": [
+      "Python, statistics and ML framework familiarity",
+      "Understanding of experimental validation and confounding",
+      "Interest in physiological or behavioral time-series data"
+    ],
+    "project": "Compare a simple personal-baseline approach against a pooled model for next-day perceived readiness.",
+    "keywords": "machine learning sports internship, athlete time series, predictive modeling",
+    "description": "Build athlete performance models using training and recovery data. Compare personal baselines and test predictions on later sessions.",
+    "method": {
+      "loop": "Compare a personal baseline with a pooled model on later training sessions. Track forecast error, calibration and how often useful data is missing.",
+      "rsi": "Use error reviews to revise feature choices and the evaluation split. Promote a model update only if it performs better on later, unseen sessions."
+    }
+  },
+  {
+    "title": "Sports AI Evaluation & Prompt Engineering Intern",
+    "category": "AI & Data",
+    "slug": "sports-ai-evaluation-and-prompt-engineering-intern",
+    "lead": "Write test questions for sports AI and check whether its answers cite evidence and explain uncertainty.",
+    "mission": "Design and evaluate AI answers for athlete and coach questions using source-linked evidence, uncertainty language, permissions and role-aware guardrails. Evaluate errors and improvement over real test sets.",
+    "tasks": [
+      "Design prompts that request athlete context before interpreting trends",
+      "Develop test cases for ambiguity, sensitive data and misleading correlations",
+      "Evaluate output quality across multiple models and languages",
+      "Document prompts, limitations and human-review requirements"
+    ],
+    "skills": [
+      "Interest in LLM evaluation and prompt design",
+      "Clear technical writing and careful judgment",
+      "Ability to test systematically rather than rely on anecdotes"
+    ],
+    "project": "Build an evaluation set for coach questions about training load that checks factual grounding, uncertainty and privacy.",
+    "keywords": "LLM evaluation internship, prompt engineering, sports AI assistant",
+    "description": "Evaluate AI answers to athlete and coach questions for factual accuracy, uncertainty and appropriate handling of private information.",
+    "method": {
+      "loop": "Test a prompt change on questions about training load, privacy and uncertainty. Score the responses against a shared rubric.",
+      "rsi": "Turn disagreements and failures into better rubric examples. Retest the revised evaluation method on fresh questions before changing the prompt standard."
+    }
+  },
+  {
+    "title": "Athlete Sensor Integration Intern",
+    "category": "Engineering & Wearables",
+    "slug": "athlete-sensor-integration-intern",
+    "lead": "Connect wearable data streams and check whether their timestamps, units and sample rates line up.",
+    "mission": "Prototype ingestion of wearable, smartphone and environmental data into athlete timelines. Pay special attention to timestamps, missing values, consent, sensor comparability and how metrics are explained.",
+    "tasks": [
+      "Normalize device units, sample rates and event timestamps",
+      "Build connector tests for missing and duplicated sensor packets",
+      "Track provenance and sensor quality alongside measurements",
+      "Collaborate on field validation across activities and devices"
+    ],
+    "skills": [
+      "APIs, data formats and basic signal knowledge",
+      "Strong debugging and integration instincts",
+      "Familiarity with BLE or wearable SDKs is helpful"
+    ],
+    "project": "Combine heart-rate and session-RPE streams into a synchronized timeline with clear markers for missing readings.",
+    "keywords": "wearable sensors internship, data integration, sports wearable data",
+    "description": "Integrate athlete wearable data and build tests for timing errors, missing sensor packets and duplicate records.",
+    "method": {
+      "loop": "Replay the same wearable streams through different synchronization rules. Compare timestamp drift, missing readings and duplicate events.",
+      "rsi": "Use the most common failures to improve validation rules and diagnostic fixtures. Retest against a new device or a fresh session before adopting the rules."
+    }
+  },
+  {
+    "title": "Biomedical Engineering & Wearable Sensors Intern",
+    "category": "Engineering & Wearables",
+    "slug": "biomedical-engineering-and-wearable-sensors-intern",
+    "lead": "Test how motion and sensor fit affect physiological readings during training.",
+    "mission": "Work on candidate sensing approaches for interoperable athlete wearables, with emphasis on signal quality, participant comfort, validation and appropriate data use.",
+    "tasks": [
+      "Investigate PPG, ECG, IMU and skin-contact measurement considerations",
+      "Draft bench and field validation protocols for movement-heavy conditions",
+      "Analyze noise, artifact and sensor placement limitations",
+      "Collaborate with sport scientists to explain signal interpretation boundaries"
+    ],
+    "skills": [
+      "Biomedical engineering or related quantitative training",
+      "Familiarity with physiological signals and signal processing",
+      "Care with human-subject privacy and research ethics"
+    ],
+    "project": "Design a pilot protocol comparing heart-rate quality during interval exercise across sensor positions and motion conditions.",
+    "keywords": "biomedical engineering internship, athlete sensors, PPG HRV",
+    "description": "Compare physiological sensors for athlete wearables. Develop bench and field tests for signal quality, device fit and movement.",
+    "method": {
+      "loop": "Compare sensor placements during matched exercise bouts. Track agreement with a reference, signal loss during motion, and wearer comfort.",
+      "rsi": "Use repeatable failure patterns to improve the placement protocol and acceptance tests. Repeat the comparison on new sessions before recommending a setup."
+    }
+  },
+  {
+    "title": "Software Quality Assurance Intern (Sports Platform)",
+    "category": "Engineering & Wearables",
+    "slug": "software-quality-assurance-intern-sports-platform",
+    "lead": "Test what happens when an athlete submits a check-in or a coach opens a report with incomplete data.",
+    "mission": "Test how athlete inputs, sensors, integrations and role-specific dashboards behave under realistic edge cases.",
+    "tasks": [
+      "Create end-to-end tests for athlete check-ins and coach reporting",
+      "Check date, timezone, units and missing-data behavior",
+      "Reproduce Bluetooth disconnects and stale sensor readings in mocks",
+      "Report accessibility issues and privacy boundary failures clearly"
+    ],
+    "skills": [
+      "Analytical testing and precise bug reporting",
+      "Interest in automated testing and APIs",
+      "Empathy for athletes and staff using the product under pressure"
+    ],
+    "project": "Test a scenario where an athlete crosses time zones and a late wearable sync must not corrupt a recovery trend.",
+    "keywords": "software QA internship, sport analytics testing, wearables QA",
+    "description": "Write tests for athlete check-ins and coach reports, including time zones, missing data, consent and access permissions.",
+    "method": {
+      "loop": "Reproduce a late wearable sync after a time zone change. Verify the recovery trend before and after the fix using the same athlete record.",
+      "rsi": "Turn each escaped defect into a regression case. Review which scenarios the suite keeps missing and update the way future test cases are chosen."
+    }
+  },
+  {
+    "title": "Wearable Embedded Systems & Firmware Intern",
+    "category": "Engineering & Wearables",
+    "slug": "wearable-embedded-systems-and-firmware-intern",
+    "lead": "Write firmware for sensor sampling and test Bluetooth dropouts and battery life during movement.",
+    "mission": "Work on smartphone-connected wearable prototypes, including prototypes designed around athlete use cases. Explore BLE reliability, sensor timestamps, power budgets and firmware testing; keep experimental hardware clearly separate from shipped features.",
+    "tasks": [
+      "Prototype sensor sampling and Bluetooth communication under motion",
+      "Measure battery life and profile low-power operating modes",
+      "Write tests for disconnects, buffering and data integrity",
+      "Document device diagnostics and reproducible bench setups"
+    ],
+    "skills": [
+      "C or C++ with embedded development experience",
+      "Familiarity with BLE and hardware debugging is useful",
+      "Patience with instrumentation and real-world constraints"
+    ],
+    "project": "Demonstrate a motion-aware BLE sensor stream with timestamps, reconnection handling and a measured energy profile.",
+    "keywords": "embedded systems internship, wearable devices, BLE firmware",
+    "description": "Build firmware for athlete wearables and measure Bluetooth reliability, sensor timing and power use.",
+    "method": {
+      "loop": "Run controlled connection, motion and sleep tests on each firmware revision. Measure packet loss, recovery time and battery draw.",
+      "rsi": "Use device logs to refine power settings, reconnection logic and the bench tests. Compare the next revision against the same budget and failure cases."
+    }
+  },
+  {
+    "title": "Wearable Mechatronics & Prototyping Intern",
+    "category": "Engineering & Wearables",
+    "slug": "wearable-mechatronics-and-prototyping-intern",
+    "lead": "Prototype enclosures and mounts that can stay in place and remain comfortable during training.",
+    "mission": "Work on athlete wearable enclosure concepts, attachment systems and integration challenges that arise when electronics move with an athlete.",
+    "tasks": [
+      "Prototype athlete-friendly mounting and enclosure concepts",
+      "Review vibration, sweat, weather and mechanical durability requirements",
+      "Coordinate fit and usability tests with clear research controls",
+      "Support design-for-assembly and iterative prototype documentation"
+    ],
+    "skills": [
+      "Mechanical design or mechatronics skills",
+      "CAD and prototyping curiosity",
+      "Attention to comfort, safety and repeatable testing"
+    ],
+    "project": "Compare three wearable mounting concepts for retention, comfort and motion artifacts during a training session.",
+    "keywords": "mechatronics internship, sports wearables, athlete hardware",
+    "description": "Design and test wearable enclosures and attachments for comfort, durability and sport-specific movement.",
+    "method": {
+      "loop": "Compare attachment designs during the same set of movements. Record retention, comfort ratings and motion artifacts.",
+      "rsi": "Use observed failure modes to update the mounting design and the protocol used to test it. Validate the changes in a different movement session."
+    }
+  },
+  {
+    "title": "Wearable Signal Processing & Control Systems Intern",
+    "category": "Engineering & Wearables",
+    "slug": "wearable-signal-processing-and-control-systems-intern",
+    "lead": "Test filters and feedback timing when wearable signals get noisy as an athlete moves.",
+    "mission": "Explore control and signal-handling strategies for wearable prototypes and sensor-driven athlete feedback. Focus on power, latency, reliability and safe operating states.",
+    "tasks": [
+      "Model sampling and feedback timing under changing activity conditions",
+      "Prototype robust filtering and threshold logic for noisy signals",
+      "Design tests for missing packets, battery constraints and delayed feedback",
+      "Document system behavior and safe failure modes"
+    ],
+    "skills": [
+      "Control theory or signal processing fundamentals",
+      "Comfort with MATLAB, Python or embedded tooling",
+      "Structured troubleshooting and measurement habits"
+    ],
+    "project": "Create a test harness that assesses delay and stability for a proposed training-session feedback loop.",
+    "keywords": "control engineering internship, wearable systems, athlete sensing",
+    "description": "Prototype wearable signal filtering and feedback controls. Measure latency, power use and reliability under changing activity.",
+    "method": {
+      "loop": "Run a feedback algorithm against recorded or simulated sensor streams. Measure delay, false triggers and recovery after a disrupted signal.",
+      "rsi": "Use the failures to tune thresholds and improve the test harness. Retest against agreed stability and safety limits before recommending a live trial."
+    }
+  },
+  {
+    "title": "Athlete & Coach Creator Partnerships Intern",
+    "category": "Growth & Partnerships",
+    "slug": "athlete-and-coach-creator-partnerships-intern",
+    "lead": "Find coaches and creators who can explain sports science clearly, then develop briefs for joint projects.",
+    "mission": "Identify coaches, athletes, sports educators and science communicators who could help explain performance data and athlete-centered wearable technology.",
+    "tasks": [
+      "Research creators based on subject expertise and audience relevance",
+      "Develop partnership briefs with clear educational goals",
+      "Coordinate consent-based content collaborations and review",
+      "Measure learning and qualified engagement, not just impressions"
+    ],
+    "skills": [
+      "Understanding of creator communities and sports culture",
+      "Professional relationship-building and campaign organization",
+      "Judgment about evidence and disclosure"
+    ],
+    "project": "Plan a series with sports science educators on interpreting recovery data, including transparent sponsorship disclosures.",
+    "keywords": "sports influencer internship, athlete creators, sports partnerships",
+    "description": "Research sports creators and draft partnership briefs with clear educational goals, permissions and consent.",
+    "method": {
+      "loop": "Pilot a research story with a small group of creators. Review qualified interest, audience questions and how accurately the evidence was explained.",
+      "rsi": "Use those reviews to improve creator selection, briefs and the review checklist. Check whether the next collaboration produces clearer audience questions and fewer corrections."
+    }
+  },
+  {
+    "title": "Digital Growth & Sports Marketing Intern",
+    "category": "Growth & Partnerships",
+    "slug": "digital-growth-and-sports-marketing-intern",
+    "lead": "Find the questions coaches and athletes ask online and test which messages help them understand the product.",
+    "mission": "Support digital campaigns aimed at sports science students, athlete communities, coaches and performance directors. Optimize messaging through research and respectful measurement.",
+    "tasks": [
+      "Research audience intent across sports performance search and communities",
+      "Plan email, social and landing-page experiments for relevant groups",
+      "Analyze channel performance and lead quality rather than vanity metrics",
+      "Coordinate campaign assets around specific sports and regions"
+    ],
+    "skills": [
+      "Interest in digital analytics and experimentation",
+      "Strong writing and audience empathy",
+      "Basic familiarity with search and conversion measurement"
+    ],
+    "project": "Build a targeted European sports science internship campaign with attributed applications and clear learnings.",
+    "keywords": "sports digital marketing internship, athlete marketing, sports growth",
+    "description": "Research sports technology audiences and test landing page, email and social copy for athletes, coaches and performance teams.",
+    "method": {
+      "loop": "Test one change to a recruiting message at a time. Compare engagement from relevant candidates and how often they reach the role page.",
+      "rsi": "Use audience feedback to refine segmentation, measurement and copy. Carry the revised test into the next campaign with the same quality criteria."
+    }
+  },
+  {
+    "title": "Go-to-Market Automation Intern (Sports Technology)",
+    "category": "Growth & Partnerships",
+    "slug": "go-to-market-automation-intern-sports-technology",
+    "lead": "Build CRM workflows that record where prospect information came from and leave outreach decisions with a person.",
+    "mission": "Connect research, CRM, analytics and content to support outreach to clubs, universities, coaches and sports organizations.",
+    "tasks": [
+      "Design accurate enrichment pipelines with clear provenance",
+      "Implement CRM workflows for tailored outreach and meeting follow-up",
+      "Instrument the candidate and partner funnel with meaningful conversions",
+      "Test deduplication, opt-outs and data-handling safeguards"
+    ],
+    "skills": [
+      "APIs, scripting or automation platform experience",
+      "Strong understanding of CRM data quality",
+      "Responsible attitudes toward outreach permissions"
+    ],
+    "project": "Create a workflow that turns a verified sports organization research record into a reviewable, personalized prospect brief.",
+    "keywords": "sports GTM engineer internship, CRM automation, sports tech growth",
+    "description": "Build CRM workflows for sports technology outreach, prospect research and meeting follow-up with human review.",
+    "method": {
+      "loop": "Send sample organization records through a prospecting workflow. Review accuracy, personalization and the amount of manual correction required.",
+      "rsi": "Convert reviewer corrections into verification rules and test examples. Run the revised workflow on fresh records before using it for outreach."
+    }
+  },
+  {
+    "title": "Sports Community & Social Media Intern",
+    "category": "Growth & Partnerships",
+    "slug": "sports-community-and-social-media-intern",
+    "lead": "Plan posts and discussions around the questions athletes and coaches raise, and arrange interviews with their permission.",
+    "mission": "Develop informative social formats about training context, wearable technology and the people doing applied sport science.",
+    "tasks": [
+      "Plan audience-relevant content across professional and athlete platforms",
+      "Coordinate interviews and permissions for athlete stories",
+      "Moderate conversations with evidence-conscious responses",
+      "Report engagement quality and useful questions back to teams"
+    ],
+    "skills": [
+      "Confident written communication and social platform familiarity",
+      "Good judgment on health and performance claims",
+      "Creative production and community-building interest"
+    ],
+    "project": "Launch a recurring short video series explaining the difference between training load, readiness and recovery.",
+    "keywords": "sports social media internship, athlete community, sports content",
+    "description": "Develop community and social content for athletes and coaches. Coordinate interviews and check permissions before sharing athlete stories.",
+    "method": {
+      "loop": "Share one explanation of training load or recovery and collect audience questions. Look for specific misunderstandings in the replies.",
+      "rsi": "Use recurring questions to improve research briefs and editorial checks. Test whether a new explanation resolves the confusion in the next edition."
+    }
+  },
+  {
+    "title": "Sports Journalism & Public Relations Intern",
+    "category": "Growth & Partnerships",
+    "slug": "sports-journalism-and-public-relations-intern",
+    "lead": "Interview coaches and researchers, then check the claims behind each performance story.",
+    "mission": "Work across interviews, reporting, media relations and editorial research to explain athletic performance science and responsible AI applications.",
+    "tasks": [
+      "Interview coaches, researchers and product team members",
+      "Fact-check research claims and obtain appropriate approvals",
+      "Prepare press materials, interview notes and media lists",
+      "Create narratives showing the practical problems teams face"
+    ],
+    "skills": [
+      "Strong reporting, interviewing and editorial ethics",
+      "Ability to check claims against primary sources",
+      "Interest in sport and technology communication"
+    ],
+    "project": "Produce a sourced feature on the challenges of combining athlete self-reports with wearable data.",
+    "keywords": "sports journalism internship, sports PR, science communication",
+    "description": "Interview people working in sports science and verify the evidence behind stories about training, research and performance technology.",
+    "method": {
+      "loop": "Review a draft with a subject matter expert. Log which athlete performance claims needed a stronger source or clearer context.",
+      "rsi": "Turn recurring corrections into verification questions for future drafts. Use an independent review to see whether the updated reporting process catches more problems earlier."
+    }
+  },
+  {
+    "title": "Sports Market Research & Positioning Intern",
+    "category": "Growth & Partnerships",
+    "slug": "sports-market-research-and-positioning-intern",
+    "lead": "Interview sports staff and compare how they use wearables and athlete management software.",
+    "mission": "Study the decision processes of coaches, sports directors and performance staff. Translate real needs into clear, grounded product positioning.",
+    "tasks": [
+      "Interview or research sport-specific stakeholder segments",
+      "Compare competing approaches to athlete management and wearables",
+      "Develop positioning briefs tailored to club maturity",
+      "Measure how clearly audiences understand product benefits and limits"
+    ],
+    "skills": [
+      "Curiosity about sports business and market research",
+      "Ability to synthesize findings into clear recommendations",
+      "Collaborative communication and presentation skills"
+    ],
+    "project": "Prepare positioning for three different audiences: an academy sports scientist, a professional club coach and an independent athlete.",
+    "keywords": "sports marketing internship, athlete technology market research",
+    "description": "Study the sports performance technology market through user interviews, competitor comparisons and research on purchasing decisions.",
+    "method": {
+      "loop": "Test the same product explanation with coaches, sports scientists and athletes. Record where each group misreads the value or evidence.",
+      "rsi": "Use the interview patterns to improve both the positioning and the interview guide. Check the revision with people outside the original sample."
+    }
+  },
+  {
+    "title": "Sports Partnerships & Business Development Intern",
+    "category": "Growth & Partnerships",
+    "slug": "sports-partnerships-and-business-development-intern",
+    "lead": "Research how clubs and universities make performance decisions and prepare questions for conversations with their staff.",
+    "mission": "Help identify sporting organizations for whom connected athlete data and practical decision support could solve specific workflow problems. Turn thoughtful research into respectful, relevant outreach.",
+    "tasks": [
+      "Research sports clubs, academies, federations and performance departments",
+      "Map decision makers in performance science, coaching and club leadership",
+      "Prepare personalized introductions anchored in each team’s sport and needs",
+      "Capture meeting insights and next steps accurately in CRM"
+    ],
+    "skills": [
+      "Clear and confident professional communication",
+      "Research discipline and comfort with CRM tools",
+      "Curiosity about sport operations and consultative selling"
+    ],
+    "project": "Create a validated prospect brief for a European club: personnel, existing performance workflow, pain points and a tailored introductory message.",
+    "keywords": "sports business development internship, sports partnerships, sports sales",
+    "description": "Research clubs, universities and performance departments, then develop partnership briefs and discovery questions for sports teams.",
+    "method": {
+      "loop": "Review the fit of a club prospect brief against a conversation with performance staff. Capture the questions, objections and missing information.",
+      "rsi": "Use the gaps to update qualification criteria and the discovery guide. Test whether the revised brief prepares the next conversation more effectively."
+    }
+  },
+  {
+    "title": "Sports Science Content & Research Communications Intern",
+    "category": "Growth & Partnerships",
+    "slug": "sports-science-content-and-research-communications-intern",
+    "lead": "Write about training and recovery using sources readers can check, and explain where the evidence is uncertain.",
+    "mission": "Produce well-sourced explanations of readiness, training load, sleep, recovery and personalized performance models for athletes, coaches and universities.",
+    "tasks": [
+      "Write evidence-aware articles and practical guides on athlete performance",
+      "Interview researchers and technical contributors for accurate stories",
+      "Create editorial briefs distinguishing evidence from emerging hypotheses",
+      "Work with design and SEO colleagues on accessible multimedia content"
+    ],
+    "skills": [
+      "Excellent writing and editing",
+      "Comfort reading academic sources and citing evidence",
+      "Interest in sport, health communication or technology"
+    ],
+    "project": "Publish an accessible guide explaining why a single readiness score cannot replace athlete context or a coach’s judgment.",
+    "keywords": "sports science writing internship, athlete content, sport technology",
+    "description": "Write sports science articles and practical guides based on research and interviews about training, recovery and athlete performance.",
+    "method": {
+      "loop": "Ask a coach or sports scientist to review a draft evidence summary. Check whether readers can tell the finding, its limitations and the practical implication apart.",
+      "rsi": "Use repeated misreadings to improve the citation checklist and summary template. Test the new template on an unrelated study."
+    }
+  },
+  {
+    "title": "Sports Science SEO & AI Search Discovery Intern",
+    "category": "Growth & Partnerships",
+    "slug": "sports-science-seo-and-ai-search-discovery-intern",
+    "lead": "Find out what people ask about sports science and make the pages that answer them easier to discover.",
+    "mission": "Improve how athletes, coaches and sports science students discover credible performance research and product explanations through technical SEO, structured content, search analytics and AI-search readability.",
+    "tasks": [
+      "Research search intent for sport-specific and university-related audiences",
+      "Improve accessible page structure and useful internal linking",
+      "Audit structured data, crawlability and page performance",
+      "Measure qualified organic visits and content usefulness"
+    ],
+    "skills": [
+      "Technical SEO and basic HTML interest",
+      "Strong editorial judgment and data literacy",
+      "Understanding that search optimization must not distort health claims"
+    ],
+    "project": "Create a search-driven guide to athlete readiness measurement with evidence references and a clear next step for applicants.",
+    "keywords": "sports SEO internship, technical SEO, sports technology careers",
+    "description": "Audit sports science pages for crawlability, research candidate and coach queries, and improve internal links and page structure.",
+    "method": {
+      "loop": "Test a page against a defined set of search questions. Check crawlability, factual coverage and whether readers can reach the relevant role or evidence.",
+      "rsi": "Use missed queries and reader questions to improve the content brief and the test set. Recheck the page against new queries with the same accuracy criteria."
+    }
+  },
+  {
+    "title": "Sports Science Video & Podcast Production Intern",
+    "category": "Growth & Partnerships",
+    "slug": "sports-science-video-and-podcast-production-intern",
+    "lead": "Prepare interview questions and edit sports science discussions into videos and podcast clips that keep the original context.",
+    "mission": "Produce interviews and short-form educational media featuring sports scientists, coaches, athletes and product researchers.",
+    "tasks": [
+      "Plan interview topics using credible sport science sources",
+      "Edit long discussions into clear, context-preserving clips",
+      "Coordinate permissions, captions and accessible transcripts",
+      "Publish discoverable show notes with accurate references"
+    ],
+    "skills": [
+      "Audio or video editing basics",
+      "Storytelling instincts and editorial accuracy",
+      "Understanding of consent, attribution and media rights"
+    ],
+    "project": "Produce an interview segment on individualized performance baselines with a fact-checked transcript and chapter markers.",
+    "keywords": "sports podcast internship, sports video editing, science media",
+    "description": "Plan and edit sports science videos and podcasts using research, interviews and accurate captions.",
+    "method": {
+      "loop": "Review a draft segment with a researcher and a viewer. Compare transcript accuracy, comprehension and where the segment loses the thread.",
+      "rsi": "Turn recurring edits into better interview prompts, fact checks and caption rules. Apply them to the next recording and review the same quality measures."
+    }
+  },
+  {
+    "title": "Sports Performance Operations Intern",
+    "category": "Operations & People",
+    "slug": "sports-performance-operations-intern",
+    "lead": "Keep pilot plans, decisions and handoffs up to date so project teams know who is responsible for the next step.",
+    "mission": "Coordinate research activities, wearable prototypes, athlete data integrations and club-engagement workflows. Keep documentation, ownership, consent milestones and handoffs clear.",
+    "tasks": [
+      "Organize project handoffs, documentation and meeting outcomes",
+      "Maintain pilot readiness checklists and responsibility maps",
+      "Identify operational friction across technical and sports teams",
+      "Improve repeatable processes without adding unnecessary bureaucracy"
+    ],
+    "skills": [
+      "Excellent organizational follow-through",
+      "Comfort with collaborative tools and shared documentation",
+      "Ability to communicate across specialties"
+    ],
+    "project": "Create a pilot operations handbook covering contacts, consent checkpoints, device logistics and escalation routes.",
+    "keywords": "sports operations internship, sport tech operations, pilot coordination",
+    "description": "Coordinate sports performance projects by documenting decisions, preparing pilots and making team handoffs easier to follow.",
+    "method": {
+      "loop": "Run a simulated pilot handoff and record missed consent checks, equipment delays and unresolved ownership.",
+      "rsi": "Use the incident log to revise the handbook, rehearsal and escalation rules. Repeat the handoff with another team member to see where the process still breaks."
+    }
+  },
+  {
+    "title": "Sports Technology Finance & Pricing Intern",
+    "category": "Operations & People",
+    "slug": "sports-technology-finance-and-pricing-intern",
+    "lead": "Compare what it costs to equip and support athletes at clubs of different sizes.",
+    "mission": "Analyze unit economics for athlete wearable pilots, multi-team software deployment and service models. Build decision tools that reflect costs, uncertainty and growth stages.",
+    "tasks": [
+      "Model per-athlete hardware and platform deployment economics",
+      "Compare commercial scenarios for clubs of different sizes",
+      "Track procurement costs, onboarding costs and retention assumptions",
+      "Present sensitivity analyses that reveal the drivers of viability"
+    ],
+    "skills": [
+      "Spreadsheet modeling and numerical fluency",
+      "Interest in SaaS, sports technology or venture finance",
+      "Transparent assumptions and attention to detail"
+    ],
+    "project": "Build a scenario model comparing a 30-athlete pilot with multi-club deployment while separating confirmed costs from estimates.",
+    "keywords": "sports technology finance internship, SaaS modeling, sports business",
+    "description": "Model sports technology pilot costs, hardware and platform expenses, and pricing scenarios for clubs.",
+    "method": {
+      "loop": "Compare pilot cost estimates with observed equipment, setup and support costs. Record the assumptions that create the largest errors.",
+      "rsi": "Use the discrepancies to improve cost inputs and sensitivity tests. Compare the revised model on a new scenario before using it in a proposal."
+    }
+  },
+  {
+    "title": "Sports Technology Project Management Intern",
+    "category": "Operations & People",
+    "slug": "sports-technology-project-management-intern",
+    "lead": "Turn research and engineering plans into milestones the team can review and verify.",
+    "mission": "Coordinate schedules, deliverables and dependencies across performance science, wearable engineering, data teams and partner pilots.",
+    "tasks": [
+      "Create clear milestones and measurable definitions of done",
+      "Manage workstreams and risks without losing athlete-centered context",
+      "Document meeting decisions and follow-up owners",
+      "Coordinate cross-team dependencies in sensor and dashboard delivery"
+    ],
+    "skills": [
+      "Planning, communication and problem-solving ability",
+      "Familiarity with Notion, Jira or similar tools is useful",
+      "Ownership mindset and attention to dependencies"
+    ],
+    "project": "Build and maintain a delivery plan for a simulated club pilot from research approval to dashboard feedback.",
+    "keywords": "sports technology project management internship, PM internship",
+    "description": "Plan sports technology projects across research, product and engineering. Track dependencies, milestones and decisions.",
+    "method": {
+      "loop": "Compare planned and actual work at each milestone. Record blocked decisions, rework and missed dependencies during a pilot simulation.",
+      "rsi": "Use the variance log to improve estimates, dependency checks and review timing. Test the new planning routine on the next workstream."
+    }
+  },
+  {
+    "title": "Talent Experience & Sports Science Onboarding Intern",
+    "category": "Operations & People",
+    "slug": "talent-experience-and-sports-science-onboarding-intern",
+    "lead": "Talk with new contributors about their experience and help them find a sports science or wearable project they can join.",
+    "mission": "Coordinate candidate communication, internship onboarding, team introductions and practical learning plans within Athletics Performance Intelligence. Help participants understand their responsibilities and make timely contributions to athlete-oriented work.",
+    "tasks": [
+      "Meet prospective members to understand background, interests and availability",
+      "Help participants choose appropriate performance science or wearable technology projects",
+      "Coordinate orientation, masterclasses, onboarding and team introductions",
+      "Support ongoing engagement, feedback and professional growth"
+    ],
+    "skills": [
+      "Empathy, follow-through and collaborative communication",
+      "Interest in education, psychology, talent or community development",
+      "Respect for differences in experience and culture"
+    ],
+    "project": "Design an onboarding journey that connects a sports science or engineering intern to a mentor, a clear research question and a first measurable deliverable.",
+    "keywords": "people and culture internship, community development, sports science interns",
+    "description": "Help candidates find relevant sports science projects and prepare new contributors for research, product and engineering work.",
+    "method": {
+      "loop": "Follow a new contributor through their first research task. Record time to first deliverable, unclear instructions and requests for help.",
+      "rsi": "Use the feedback to refine mentor matching, the onboarding checklist and how readiness is assessed. Check the changes with the next cohort."
+    }
+  },
+  {
+    "title": "Athlete Travel & Recovery Research Intern",
+    "category": "Performance Science",
+    "slug": "athlete-travel-and-recovery-research-intern",
+    "lead": "Study how competition travel, sleep schedules and changes in routine affect recovery.",
+    "mission": "Research how travel times, sleep displacement, jet lag, unfamiliar accommodation and competition logistics affect training and recovery. Translate the evidence into practical context fields for athletes and staff.",
+    "tasks": [
+      "Map travel, time zone and arrival variables linked to athlete routines",
+      "Review evidence on jet lag, circadian adaptation and competition scheduling",
+      "Prototype a travel-context check-in for athlete dashboards",
+      "Coordinate interviews with team operations staff about travel friction"
+    ],
+    "skills": [
+      "Interest in sport travel, hospitality or human performance",
+      "Research and service-design mindset",
+      "Ability to treat complex real-world contexts carefully"
+    ],
+    "project": "Build a competition travel context template that coaches can relate to an athlete’s normal sleep and recovery routine.",
+    "keywords": "sports travel internship, jet lag performance, sports hospitality",
+    "description": "Study travel and recovery in sport by comparing time zones, arrival schedules and sleep with an athlete’s usual routine.",
+    "method": {
+      "loop": "Compare sleep, travel schedules and reported readiness with the athlete’s own usual patterns. Record time zones, training load and other plausible explanations.",
+      "rsi": "Use incomplete or ambiguous observations to improve what the team records on the next trip. Review proposed protocol changes with the athlete and staff before testing again."
+    }
+  },
+  {
+    "title": "Neuroscience & Cognitive Performance Intern",
+    "category": "Performance Science",
+    "slug": "neuroscience-and-cognitive-performance-intern",
+    "lead": "Review what attention tests and EEG can tell us about cognitive fatigue during training and competition.",
+    "mission": "Research attention, stress, fatigue, decision making and EEG-related methods for athlete performance. Keep clinical claims and speculative inference separate from validated findings.",
+    "tasks": [
+      "Summarize evidence for cognitive readiness and mental fatigue assessments",
+      "Review EEG and behavioral task measurement limits in active settings",
+      "Design ethically appropriate research protocols and consent materials",
+      "Explore links between cognitive measures and sport-relevant outcomes"
+    ],
+    "skills": [
+      "Neuroscience, psychology or cognitive science grounding",
+      "Comfort assessing peer-reviewed evidence",
+      "Human research ethics and careful interpretation"
+    ],
+    "project": "Prepare a feasibility assessment for a brief pre-session attention task, including confounders and potential burden on athletes.",
+    "keywords": "neuroscience internship, sports EEG, cognitive performance",
+    "description": "Study neuroscience in sport through attention, reaction time, cognitive load and the limits of EEG measurements.",
+    "method": {
+      "loop": "Repeat a brief attention or reaction time task under comparable conditions. Record test reliability, practice effects and participant burden.",
+      "rsi": "Use the results to refine task timing, quality checks and the analysis plan. Retest on a new set of sessions before treating an apparent change as a useful signal."
+    }
+  },
+  {
+    "title": "Sport Science & Performance Analysis Intern",
+    "category": "Performance Science",
+    "slug": "sport-science-and-performance-analysis-intern",
+    "lead": "Compare training load and recovery with how an athlete performs over time.",
+    "mission": "Work with performance science frameworks linking training load, perceived exertion, sleep, recovery, nutrition and match demands to the decisions of athletes and staff.",
+    "tasks": [
+      "Design structured athlete assessment and check-in protocols",
+      "Analyze longitudinal training response with individual baselines",
+      "Review evidence on workload, readiness and injury risk indicators",
+      "Explain findings clearly to nontechnical coaches and engineers"
+    ],
+    "skills": [
+      "Background or coursework in sport and exercise science",
+      "Statistics, research literacy and curiosity about wearables",
+      "Respect for individual differences and responsible inference"
+    ],
+    "project": "Create a position-specific athlete profile that links session RPE, recovery indicators and training objectives over a six-week sample period.",
+    "keywords": "sports science internship, exercise physiology, athlete performance",
+    "description": "Study how athletes respond to training, recovery and competition using their own baselines and results.",
+    "method": {
+      "loop": "Choose a performance question with a coach. Compare an agreed training or recovery measure with the athlete’s personal baseline over comparable sessions.",
+      "rsi": "Use the results to improve the next protocol, the recording checklist and the comparison period. Review the evidence with the athlete and staff before any training change."
+    }
+  },
+  {
+    "title": "Athlete & Coach Product Design Intern",
+    "category": "Product & Experience",
+    "slug": "athlete-and-coach-product-design-intern",
+    "lead": "Prototype check-ins and dashboards around the time athletes and coaches have during a training day.",
+    "mission": "Create athlete and coach experiences that surface the right context at the right moment, across check-ins, trend views and potential wearable interactions.",
+    "tasks": [
+      "Research daily routines and attention constraints across sports",
+      "Prototype accessible dashboards for varied roles and devices",
+      "Test information hierarchy, color, chart comprehension and consent flows",
+      "Work with developers to ship consistent components and states"
+    ],
+    "skills": [
+      "Portfolio or coursework in interaction or visual design",
+      "Figma or similar design tool fluency",
+      "Interest in usability research and accessibility"
+    ],
+    "project": "Prototype a coach’s morning briefing that highlights missing data and individual trends without relying on misleading red/green scores.",
+    "keywords": "sports UX internship, athlete dashboard design, sport technology UI",
+    "description": "Design athlete and coach interfaces for recording check-ins and interpreting trends, then test them in realistic workflows.",
+    "method": {
+      "loop": "Test a performance briefing with coaches and athletes. Record how quickly they identify a useful trend and whether they understand missing data.",
+      "rsi": "Use the usability findings to improve both the briefing and the test scenarios. Check the next design with fresh participants and the same comprehension tasks."
+    }
+  },
+  {
+    "title": "Athlete Product Management Intern",
+    "category": "Product & Experience",
+    "slug": "athlete-product-management-intern",
+    "lead": "Ask athletes and coaches where scheduling and data collection get in the way, then write requirements the team can test.",
+    "mission": "Translate athlete and coach interviews into useful product requirements for personalized performance views, daily check-ins and prospective wearable experiences. Test prioritization against athlete burden and measurable value.",
+    "tasks": [
+      "Interview users about readiness, scheduling and data collection friction",
+      "Turn insights into testable product requirements and acceptance criteria",
+      "Prioritize product improvements using evidence and implementation constraints",
+      "Coordinate research, design, engineering and pilot feedback"
+    ],
+    "skills": [
+      "Product thinking and customer research interest",
+      "Clear writing and synthesis",
+      "Comfort navigating tradeoffs and working across teams"
+    ],
+    "project": "Define a minimum useful athlete daily check-in that meets coach needs without creating excessive athlete burden.",
+    "keywords": "sports product management internship, athlete experience, wearable product",
+    "description": "Interview athletes and coaches and turn findings into testable product requirements for performance software.",
+    "method": {
+      "loop": "Test a shorter athlete check-in against the current flow. Compare completion, perceived burden and how useful the responses are to staff.",
+      "rsi": "Use the feedback to improve prioritization and experiment criteria. Check whether the next change preserves the information coaches need."
+    }
+  },
+  {
+    "title": "Coach Education & Product Enablement Intern",
+    "category": "Product & Experience",
+    "slug": "coach-education-and-product-enablement-intern",
+    "lead": "Write short guides that help coaches interpret athlete data and understand its limits.",
+    "mission": "Develop concise training materials, onboarding tutorials and interpretation guides for athlete check-ins, coach dashboards and wearable data. Build learning paths around real decisions rather than broad EdTech experiments.",
+    "tasks": [
+      "Map onboarding journeys for athletes, coaches and performance analysts",
+      "Build short learning modules around consent and data interpretation",
+      "Test comprehension with people from different sporting backgrounds",
+      "Improve lessons based on learner feedback and task completion"
+    ],
+    "skills": [
+      "Interest in instructional design or education technology",
+      "Empathy for learners with different levels of expertise",
+      "Comfort making simple prototypes or instructional materials"
+    ],
+    "project": "Create a coach onboarding module showing how to review an individual performance baseline without treating a readiness score as a diagnosis.",
+    "keywords": "sports edtech internship, coach education, wearable onboarding",
+    "description": "Develop coach education materials on consent, interpreting athlete data and using performance reports in practice.",
+    "method": {
+      "loop": "Ask coaches to work through a sample athlete baseline before and after a learning module. Compare the decisions they explain and the limits they recognize.",
+      "rsi": "Use common interpretation errors to improve the examples and the learning checks. Retest the revised material with a new group of coaches."
+    }
+  },
+  {
+    "title": "Frontend Developer Intern (Athlete & Coach Platforms)",
+    "category": "Product & Experience",
+    "slug": "frontend-developer-intern-athlete-and-coach-platforms",
+    "lead": "Build accessible dashboards that show changes in training load, sleep and recovery on a phone or desktop.",
+    "mission": "Implement mobile-friendly dashboards that surface trends, data provenance, athlete self-reports and context without overwhelming the user.",
+    "tasks": [
+      "Build accessible views for readiness, load, sleep and recovery trends",
+      "Develop responsive athlete and coach workflows with realistic mock data",
+      "Integrate authorized API responses and loading/error states",
+      "Test understandable chart labels and mobile interactions"
+    ],
+    "skills": [
+      "JavaScript or TypeScript with React or Angular fundamentals",
+      "Attention to accessibility, usability and performance",
+      "Ability to collaborate with designers and backend teams"
+    ],
+    "project": "Build a privacy-aware coach view showing team trends with athlete-specific access rules and understandable missing-data states.",
+    "keywords": "sports frontend internship, React dashboards, sports analytics UI",
+    "description": "Build responsive athlete and coach interfaces for training, sleep and recovery data using realistic test records.",
+    "method": {
+      "loop": "Run the same dashboard tasks with test users on different screen sizes. Check accessibility, performance and permissions by role at the same time.",
+      "rsi": "Turn recurring failures into better interface components and automated checks. Recheck permissions and readability before shipping the next version."
+    }
+  },
+  {
+    "title": "Sports Technology Technical Writing Intern",
+    "category": "Product & Experience",
+    "slug": "sports-technology-technical-writing-intern",
+    "lead": "Write instructions that help athletes, coaches and developers use the platform and understand where its data comes from.",
+    "mission": "Write clear documentation for coach dashboards, athlete controls, wearable prototypes, data connections and research-facing APIs.",
+    "tasks": [
+      "Build role-specific guides for athletes, coaches and technical staff",
+      "Explain known limitations, data provenance and privacy controls",
+      "Maintain changelogs and terminology across product surfaces",
+      "Test documentation through user tasks rather than assumptions"
+    ],
+    "skills": [
+      "Clear, precise writing and comfort with technical concepts",
+      "Interest in sport and responsible technology",
+      "Ability to organize information for different audiences"
+    ],
+    "project": "Produce a guide that explains wearable sync gaps, data freshness and what a coach should do when a metric is unavailable.",
+    "keywords": "sports technical writing internship, product documentation, wearable guides",
+    "description": "Document athlete settings, coach dashboards, wearable prototypes, data connections and APIs for sports technology users.",
+    "method": {
+      "loop": "Ask a reader who is new to the platform to resolve a simulated wearable sync gap using the documentation. Record where they get stuck or need help.",
+      "rsi": "Use their questions to improve guide structure and the review checklist. Validate the update by watching a new reader complete the same task."
+    }
+  },
+  {
+    "title": "Voice & Human-AI Interaction Intern (Athlete Wearables)",
+    "category": "Product & Experience",
+    "slug": "voice-and-human-ai-interaction-intern-athlete-wearables",
+    "lead": "Test hands-free voice controls when athletes are moving, interrupted or training somewhere noisy.",
+    "mission": "Prototype hands-free voice interactions for athlete wearables, including athlete-appropriate prompts, interruption handling, error recovery, consent and situations where silence is safer than notifications.",
+    "tasks": [
+      "Prototype voice and multimodal interactions in noisy sport settings",
+      "Run usability exercises with athlete or coach personas",
+      "Study when feedback helps and when it becomes distracting",
+      "Document accessibility, transparency and opt-out behavior"
+    ],
+    "skills": [
+      "Interest in HCI, HRI, cognition or interaction design",
+      "Skill with observation and structured usability notes",
+      "Strong sensitivity to safety and privacy"
+    ],
+    "project": "Test a mock voice interaction with a wearable for a runner who needs hands-free session notes without distraction.",
+    "keywords": "voice UX internship, human AI interaction, sports wearable",
+    "description": "Prototype voice interactions for athlete wearables and test them under noise, distraction and interruptions.",
+    "method": {
+      "loop": "Test a voice interaction in quiet and noisy conditions. Measure task completion, unwanted interruptions and the ease of opting out.",
+      "rsi": "Use recorded failures to refine when the system speaks and to improve the scenario library. Retest the revised behavior in a different sport setting."
+    }
+  },
+  {
+    "title": "Athlete Data Privacy & Ethics Intern",
+    "category": "Research & Governance",
+    "slug": "athlete-data-privacy-and-ethics-intern",
+    "lead": "Explain who can see athlete data and help draft clear consent and access rules.",
+    "mission": "Research consent, cross-border data flows, wearable monitoring and governance in sport. Focus on defensible privacy practices for teams, athletes, minors and authorized staff.",
+    "tasks": [
+      "Compare relevant athlete-data privacy requirements in target markets",
+      "Draft plain-language consent and role-access explanations",
+      "Map risks around monitoring, profiling and secondary data use",
+      "Translate legal research into actionable questions for qualified counsel"
+    ],
+    "skills": [
+      "Interest in technology law, ethics or public policy",
+      "Strong source-based research and clear writing",
+      "Ability to distinguish analysis from legal advice"
+    ],
+    "project": "Create an athlete consent and coach-access checklist for a hypothetical European club trial.",
+    "keywords": "sports data privacy internship, GDPR athlete data, AI ethics",
+    "description": "Study consent, access permissions and responsible handling of athlete and wearable data in sports technology.",
+    "method": {
+      "loop": "Walk a simulated athlete data request through consent, purpose and staff access checks. Record ambiguous permissions and missing audit evidence.",
+      "rsi": "Turn each gap into a control or review question. Retest the guidance on a different data request and route consequential decisions to the appropriate reviewers."
+    }
+  },
+  {
+    "title": "Sports Science Research & Reproducibility Intern",
+    "category": "Research & Governance",
+    "slug": "sports-science-research-and-reproducibility-intern",
+    "lead": "Reproduce published sports science methods and record where the original evidence limits what can be concluded.",
+    "mission": "Support transparent sports science evidence reviews and reproducible benchmarks. Document sources, assumptions, validation limits and how published findings may or may not transfer to individual athletes.",
+    "tasks": [
+      "Reproduce published approaches using permitted or synthetic datasets",
+      "Create evidence tables documenting study design and limitations",
+      "Improve experiment tracking and open-source documentation",
+      "Prepare research briefs that distinguish exploratory from validated results"
+    ],
+    "skills": [
+      "Excellent research methodology and citation discipline",
+      "Ability to work with reproducible notebooks or source code",
+      "Comfort challenging assumptions respectfully"
+    ],
+    "project": "Reproduce a published workload model and document whether its validation would transfer to the sports contexts we serve.",
+    "keywords": "open science internship, sports research assistant, reproducible ML",
+    "description": "Reproduce sports science studies using permitted data and document the study design, analysis steps and limitations.",
+    "method": {
+      "loop": "Ask another researcher to reproduce a published workload analysis with the same inputs. Record deviations, undocumented choices and missing outputs.",
+      "rsi": "Use the reproduction gaps to refine the protocol, evidence table and handoff checklist. Run the next replication on a fresh study to test the method itself."
+    }
+  }
+]

@@ -2,6 +2,33 @@ import { readFile } from "fs/promises";
 import { join } from "path";
 import { buildShareMetaTags, siteMeta } from "../lib/site-meta.js";
 
+const bundleTemplate = /(<script type="__bundler\/template">\s*)("[\s\S]*?")(\s*<\/script>)/;
+const careerLink = '<a href="/learning-opportunities" style="font-size:14px;color:var(--muted)" style-hover="color:var(--brand-ink)">Internships &amp; Learning</a>';
+
+function addCareersNavigation(html) {
+  // The homepage export keeps its visible header and footer inside a JSON template.
+  const withFallback = html.replace(
+    "This page requires JavaScript to display.",
+    'This page requires JavaScript to display. <a href="/learning-opportunities" style="color:#086d62;font-weight:700">Explore learning opportunities</a>.',
+  );
+  return withFallback.replace(bundleTemplate, (script, open, json, close) => {
+    let template;
+    try {
+      template = JSON.parse(json);
+    } catch {
+      return script;
+    }
+
+    const updated = template
+      .replace(/(<a href="#technology"[^>]*>Technology<\/a>)(?=[^<]*<a href="#pricing")/, `$1\n      ${careerLink}`)
+      .replace(/<a href="https:\/\/www\.flolabsinnovations\.com\/"[^>]*>Careers<\/a>/, careerLink);
+    if (updated === template) return script;
+
+    // Keep any closing script tags inside the JSON string from ending the wrapper.
+    return open + JSON.stringify(updated).replace(/<\//g, "<\\u002F") + close;
+  });
+}
+
 export async function GET(request) {
   let html = await readFile(join(process.cwd(), "public", "index.html"), "utf8");
 
@@ -24,7 +51,7 @@ export async function GET(request) {
     html = html.replace(titleTag, `${titleTag}\n  ${meta}`);
   }
 
-  return new Response(html, {
+  return new Response(addCareersNavigation(html), {
     headers: {
       "Content-Type": "text/html; charset=utf-8",
     },
