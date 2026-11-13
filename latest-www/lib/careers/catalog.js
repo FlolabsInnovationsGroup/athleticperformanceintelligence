@@ -3,7 +3,7 @@ import { siteMeta } from "../site-meta.js";
 
 export const brand = siteMeta.siteName;
 export const origin = siteMeta.fallbackOrigin;
-export const careerPath = "/careers";
+export const careerPath = "/learning-opportunities";
 export const assets = "/career-assets";
 export const rolePath = (role) => `${careerPath}/${role.slug}`;
 export const roleKind = (role) => role.kind ?? "internship";
@@ -55,27 +55,31 @@ export const trackFor = (role) => tracks.find((track) => track.name === role.cat
 
 export const questions = [
   {
-    question: "What do sports science interns work on?",
-    answer: "Sports science interns study how athletes respond to training, recovery, travel and cognitive demands. Other internships work on wearable sensors, athlete data, performance models and the tools coaches use to interpret the results.",
+    question: "Is this a learning program or a job application?",
+    answer: "Our primary invitation is to join an experiential learning and research community. The opportunities describe ways to learn and contribute to applied projects. This page is not a direct-hire job board, and participation does not promise employment.",
   },
   {
-    question: "Who should consider the Research Associate role?",
-    answer: "The Research Associate role is for PhD holders, doctoral candidates, postdocs and experienced subject matter experts with a record of applied research. Relevant fields include sports science, physiology, biomechanics, neuroscience, statistics, machine learning and wearable sensing.",
+    question: "Who can participate?",
+    answer: "We welcome motivated students, graduates, career changers and independent learners who are willing to contribute and learn collaboratively. Research Associate opportunities are separately intended for doctoral researchers, postdocs and experienced subject matter experts.",
   },
   {
-    question: "Are the internships remote?",
-    answer: "Most collaboration is designed to happen remotely. Device testing, partner meetings and some research activities may need to happen in person. Placement details will appear on the relevant role page as they’re confirmed.",
+    question: "How does the learning journey work?",
+    answer: "Prospective participants review the available opportunities, complete the current intake process when open, take part in introductory learning and orientation, and discuss their interests and fit before joining an appropriate project team. Steps may vary by pathway.",
   },
   {
-    question: "Do I need experience working with professional athletes?",
-    answer: "For internships, relevant coursework, independent projects, research and experience from other fields can show how you’d contribute. Read the skills and experience section for the role you’re considering.",
+    question: "How much time should I expect to commit?",
+    answer: "The program is remote-first and typically asks participants to plan for at least 8–10 hours each week. Specific expectations, arrangements and any terms are confirmed for each opportunity before participation.",
   },
   {
-    question: "What kind of athlete data would I work with?",
-    answer: "Projects may use training logs, athlete check-ins, wearable sensor readings or competition results. Early tests can use simulated data or data athletes have consented to share. Teams document who can access it and what conclusions it supports.",
+    question: "Do I need experience with professional athletes?",
+    answer: "No. Curiosity, sound judgment and a willingness to learn matter for many pathways. Coursework, independent projects and experience from other fields can also be relevant. Experienced research opportunities have different expectations.",
   },
   {
-    question: "How do I apply?",
-    answer: "Each role page will list application instructions when they’re available. You can read the responsibilities, skills and sample projects here now.",
+    question: "Can the program lead to a career with Athletic Performance Intelligence?",
+    answer: "Strong contributors may be considered for career opportunities if relevant roles become available and there is a mutual fit. Participation does not guarantee employment, payment or a future job offer.",
+  },
+  {
+    question: "How can I apply to join the community?",
+    answer: "Review the learning opportunities and the program information first. Verified application instructions will be published here when the next intake is open. No direct-hire application is offered on this page.",
   },
 ];
