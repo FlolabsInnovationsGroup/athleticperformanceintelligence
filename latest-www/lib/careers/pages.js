@@ -2,9 +2,9 @@ import {
   assets, brand, careerPath, orderedRoles, origin, questions, roleKind, rolePath, trackFor, tracks,
 } from "./catalog.js";
 
-const hubTitle = "Sports Science Careers and Internships";
+const hubTitle = "Internships, Research & Learning Opportunities";
 const hubDescription =
-  "Read full descriptions for sports science and sports technology internships and a Research Associate role in athlete performance research.";
+  "Join a learning and research community through internships and applied projects in sports science, neuroscience, AI, and wearable technology.";
 const stadium = `${assets}/stadium-1024.webp`;
 const stadiumAlt = "Aerial view of a football pitch and running track";
 const brandId = `${origin}/#organization`;
@@ -22,7 +22,7 @@ function jsonLd(schema) {
 function breadcrumbs(path, label) {
   const items = [
     { name: brand, item: `${origin}/` },
-    { name: "Careers", item: origin + careerPath },
+    { name: "Internships & Learning", item: origin + careerPath },
   ];
   if (path !== careerPath) items.push({ name: label, item: origin + path });
   return {
@@ -36,7 +36,7 @@ function breadcrumbs(path, label) {
 function header(productBase, onHub) {
   const links = `
     <a href="${productBase}/#api">Platform</a>
-    <a href="${careerPath}"${onHub ? ' aria-current="page"' : ""}>Careers</a>
+    <a href="${careerPath}"${onHub ? ' aria-current="page"' : ""}>Internships &amp; Learning</a>
     <a href="${careerPath}#methodology">Methodology</a>
     <a href="${careerPath}#questions">FAQ</a>`;
   return `
@@ -66,7 +66,7 @@ function footer(productBase) {
         <span>${brand}</span>
       </a>
       <nav aria-label="Footer navigation">
-        <a href="${careerPath}#roles">Job descriptions</a>
+        <a href="${careerPath}#roles">Learning opportunities</a>
         <a href="${careerPath}#methodology">Athlete performance methodology</a>
         <a href="${productBase}/#signature">Peak Performance Signature</a>
       </nav>
@@ -131,14 +131,37 @@ function hubHero() {
   <section class="hero" aria-labelledby="hero-title">
     <div class="wrap hero-inner">
       <div class="hero-copy">
-        <h1 id="hero-title">Sports science careers and internships</h1>
-        <p class="hero-lead">We study how training, sleep, recovery and travel affect the way each athlete performs. Our sports science and technology internships help turn that research into tools for athletes and coaches.</p>
-        <p class="hero-lead">The Research Associate role is for PhD holders and experienced subject matter experts ready to lead applied studies.</p>
+        <h1 id="hero-title">Internships, research and learning opportunities</h1>
+        <p class="hero-lead">Learn by building alongside people exploring AI, neuroscience, sports science and wearable technology. Contribute to real research and product challenges while developing the skills to take on more responsibility.</p>
+        <p class="hero-lead">Our first goal is to welcome committed learners into a collaborative community. This is not a conventional job board or an application for immediate employment. Experienced researchers can explore the Research Associate pathway.</p>
+        <p class="hero-links"><a class="text-link" href="#journey">How learning works</a><a class="text-link" href="#roles">Explore opportunities</a></p>
       </div>
       <img class="hero-image" src="${stadium}"
         srcset="${assets}/stadium-640.webp 640w, ${stadium} 1024w"
         sizes="(min-width: 1280px) 610px, (min-width: 761px) 48vw, 94vw"
         alt="${stadiumAlt}" width="1024" height="786" fetchpriority="high">
+    </div>
+  </section>`;
+}
+
+function learningJourney() {
+  return `
+  <section class="wrap learning-journey" id="journey" aria-labelledby="journey-title">
+    <div class="journey-intro">
+      <p class="eyebrow">Learning comes first</p>
+      <h2 id="journey-title">Build experience through participation</h2>
+      <p>We are looking for people who want to learn, collaborate and make meaningful contributions over time. You do not have to be ready for a full-time role to get started. We look for commitment, curiosity and a willingness to improve through feedback.</p>
+    </div>
+    <div class="journey-steps">
+      <section><h3>Explore your interests</h3><p>Choose a field or project that interests you. Learn what the work involves and the skills you can develop.</p></section>
+      <section><h3>Get to know the community</h3><p>Start with an application when intake is open, introductory learning, orientation and conversations about mutual fit.</p></section>
+      <section><h3>Learn through real work</h3><p>Collaborate on research, experiments, software, prototypes or operations, with regular team discussion and feedback.</p></section>
+      <section><h3>Grow into new opportunities</h3><p>Build a record of useful contributions and develop new capabilities. Career opportunities may be considered separately when available.</p></section>
+    </div>
+    <div class="participation-note">
+      <h3>Before you join</h3>
+      <p>Participation is remote-first and generally requires at least 8–10 hours each week. Specific arrangements are confirmed before you begin. A learning opportunity is not an offer of employment and does not guarantee a paid position later.</p>
+      <a class="text-link" href="#questions">Read the participation questions</a>
     </div>
   </section>`;
 }
@@ -158,7 +181,8 @@ function roleListings() {
   return `
   <section class="role-listings wrap" id="roles" aria-labelledby="roles-title">
     <header class="listings-head">
-      <h2 id="roles-title">Job descriptions</h2>
+      <h2 id="roles-title">Explore learning opportunities</h2>
+      <p class="listings-description">These are project pathways within a learning and research community. Internship pathways emphasize development and contribution; the Research Associate pathway is intended for experienced researchers.</p>
     </header>${tracks.map((track) => `
     <section class="track" id="${track.key}" aria-labelledby="title-${track.key}">
       <div class="track-intro">
@@ -198,7 +222,7 @@ function program(productBase) {
 function faq() {
   return `
   <section class="faq wrap" id="questions" aria-labelledby="faq-title">
-    <h2 id="faq-title">Applicant questions</h2>
+    <h2 id="faq-title">Learning program questions</h2>
     <div class="faq-list">${questions.map(({ question, answer }) => `
       <section>
         <h3>${escapeHtml(question)}</h3>
@@ -212,7 +236,7 @@ export function renderHub({ preview = false } = {}) {
   const url = origin + careerPath;
   return page({
     title: hubTitle, description: hubDescription, path: careerPath, onHub: true, preview,
-    body: hubHero() + roleListings() + program(preview ? origin : "") + faq(),
+    body: hubHero() + learningJourney() + roleListings() + program(preview ? origin : "") + faq(),
     graph: [
       brandOrganization(),
       {
@@ -279,8 +303,8 @@ function relatedRoles(role, track) {
   <section class="related" aria-labelledby="related-title">
     <div class="wrap">
       <div class="related-head">
-        <h2 id="related-title">Related roles</h2>
-        <a class="text-link" href="${careerPath}#roles">All job descriptions</a>
+        <h2 id="related-title">Related opportunities</h2>
+        <a class="text-link" href="${careerPath}#roles">Explore all opportunities</a>
       </div>
       <ul class="related-list">${related.map((candidate) => `
         <li><a class="text-link" href="${rolePath(candidate)}">${escapeHtml(candidate.title)}</a></li>`).join("")}
@@ -302,7 +326,7 @@ export function renderRole(role, { preview = false } = {}) {
       <nav class="crumbs" aria-label="Breadcrumb">
         <ol>
           <li><a href="${preview ? origin : ""}/">Home</a></li>
-          <li><a href="${careerPath}">Careers</a></li>
+          <li><a href="${careerPath}">Internships &amp; Learning</a></li>
           <li aria-current="page">${escapeHtml(role.title)}</li>
         </ol>
       </nav>
@@ -311,14 +335,16 @@ export function renderRole(role, { preview = false } = {}) {
       <div class="wrap role-hero-inner">
         <h1 id="role-title">${escapeHtml(role.title)}</h1>
         <p>${escapeHtml(role.lead)}</p>
+        <p class="role-program-context">This opportunity is part of a collaborative learning and research program, not an immediate employment offer.</p>
       </div>
     </section>
     <div class="wrap role-layout">${roleDescription(role, labels)}
       <aside class="role-aside" aria-labelledby="pathway-title">
-        <h2 id="pathway-title">Application details</h2>
-        <p>Application instructions will appear here when available.</p>
+        <h2 id="pathway-title">Learning pathway</h2>
+        <p>Explore this work as part of a learn-and-contribute community. Confirmed intake details and participation terms will be published when available; this is not a direct-hire application.</p>
+        <a class="text-link" href="${careerPath}#journey">How the program works</a>
         <a class="text-link" href="#role-method">How this role uses RSI</a>
-        <a class="text-link" href="${careerPath}#questions">Applicant questions</a>
+        <a class="text-link" href="${careerPath}#questions">Program questions</a>
         <a class="text-link" href="${careerPath}#${track.key}">${escapeHtml(track.name)} roles</a>
       </aside>
     </div>
@@ -337,13 +363,13 @@ export function renderRole(role, { preview = false } = {}) {
 
 export function renderNotFound() {
   return page({
-    title: "Role not found",
-    description: "Return to the Athletic Performance Intelligence careers directory.",
+    title: "Opportunity not found",
+    description: "Explore Athletic Performance Intelligence learning and research opportunities.",
     path: careerPath,
     noindex: true,
     body: `<section class="wrap not-found">
-      <h1>We couldn’t find that role.</h1>
-      <a class="text-link" href="${careerPath}#roles">Job descriptions</a>
+      <h1>We couldn’t find that opportunity.</h1>
+      <a class="text-link" href="${careerPath}#roles">Learning opportunities</a>
     </section>`,
   });
 }
